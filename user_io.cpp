@@ -310,6 +310,13 @@ char is_psx()
 	return (is_psx_type == 1);
 }
 
+static int is_cdi_type = 0;
+char is_cdi()
+{
+	if (!is_cdi_type) is_cdi_type = strcasecmp(orig_name, "CD-i") ? 2 : 1;
+	return (is_cdi_type == 1);
+}
+
 static int is_st_type = 0;
 char is_st()
 {
