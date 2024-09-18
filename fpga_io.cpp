@@ -717,6 +717,8 @@ void fpga_spi_fast_block_write(const uint16_t *buf, uint32_t length)
 	uint32_t gpo = gpoH;
 
 	// should be optimized for speed by compiler automatically
+	printf("fpga_spi_fast_block_write %d\n",length);
+
 	while (length--)
 	{
 		gpo = gpoH | *buf++;

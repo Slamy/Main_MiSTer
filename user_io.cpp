@@ -3017,8 +3017,10 @@ void user_io_poll()
 				spi_w(0);
 				lba = spi_w(0);
 				lba = (lba & 0xFFFF) | (((uint32_t)spi_w(0)) << 16);
+				
+	lba += 150;
 				blks = ((c >> 9) & 0x3F) + 1;
-				blksz = (disk == 1 && is_psx()) ? 2352 : (128 << ((c >> 6) & 7));
+				blksz = (disk == 0 && is_cdi()) ? 2352 : (128 << ((c >> 6) & 7));
 
 				sz = blksz * blks;
 				if (sz > sizeof(buffer[0]))
@@ -3027,7 +3029,7 @@ void user_io_poll()
 					sz = blksz * blks;
 				}
 
-				//if (op) printf("c=%X, op=%d, blkpow=%d, sz=%d, lba=%llu, disk=%d\n", c, op, blkpow, sz, lba, disk);
+				if (op) printf("c=%X, op=%d, sz=%d, lba=%llu, disk=%d\n", c, op, sz, lba, disk);
 			}
 			else
 			{
@@ -3142,13 +3144,13 @@ void user_io_poll()
 			{
 				uint32_t buf_n = sizeof(buffer[0]) / blksz;
 				unsigned int psx_blksz = 0;
-				if (is_psx() && blksz == 2352)
+				if (is_cdi() && blksz == 2352)
 				{
 					//returns 0 if the mounted disk is not a chd, otherwise returns the chd hunksize in bytes
 					psx_blksz = psx_chd_hunksize();
 					if (psx_blksz && psx_blksz <= sizeof(buffer[0])) buf_n = psx_blksz / blksz;
 				}
-				//printf("SD RD (%llu,%d) on %d, WIDE=%d\n", lba, blksz, disk, fio_size);
+				printf("SD RD (%llu,%d) on %d, WIDE=%d\n", lba, blksz, disk, fio_size);
 
 				int done = 0;
 				uint32_t offset;
@@ -3156,7 +3158,7 @@ void user_io_poll()
 				if ((buffer_lba[disk] == -1LLU) || lba < buffer_lba[disk] || (lba + blks - buffer_lba[disk]) > buf_n)
 				{
 					buffer_lba[disk] = -1;
-					if (blksz == 2352 && is_psx())
+					if (blksz == 2352 && is_cdi())
 					{
 						diskled_on();
 						psx_read_cd(buffer[disk], lba, buf_n);
@@ -3194,7 +3196,7 @@ void user_io_poll()
 									memcpy(buffer[disk], "HUBM\x00\x88\x10\x80", 8);
 								}
 							}
-							else if (is_psx())
+							else if (is_cdi())
 							{
 								psx_fill_blanksave(buffer[disk], lba, blks);
 							}
@@ -3235,7 +3237,7 @@ void user_io_poll()
 				{
 					diskled_on();
 					lba += blks;
-					if (blksz == 2352 && is_psx())
+					if (blksz == 2352 && is_cdi())
 					{
 						psx_read_cd(buffer[disk], lba, buf_n);
 						buffer_lba[disk] = lba;
@@ -3539,7 +3541,7 @@ void user_io_poll()
 	if (is_megacd()) mcd_poll();
 	if (is_pce()) pcecd_poll();
 	if (is_saturn()) saturn_poll();
-	if (is_psx()) psx_poll();
+	if (is_cdi()) psx_poll();
 	if (is_neogeo_cd()) neocd_poll();
 	if (is_n64()) n64_poll();
 	process_ss(0);

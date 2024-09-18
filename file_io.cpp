@@ -542,6 +542,7 @@ int FileOpen(fileTYPE *file, const char *name, char mute)
 
 int FileSeek(fileTYPE *file, __off64_t offset, int origin)
 {
+	printf("Seek %d\n",offset);
 	if (file->filp)
 	{
 		__off64_t res = fseeko64(file->filp, offset, origin);
@@ -612,6 +613,7 @@ int FileSeekLBA(fileTYPE *file, uint32_t offset)
 int FileReadAdv(fileTYPE *file, void *pBuffer, int length, int failres)
 {
 	ssize_t ret = 0;
+	printf("Read %d\n",length);
 
 	if (file->filp)
 	{

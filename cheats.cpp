@@ -195,7 +195,7 @@ void cheats_init(const char *rom_path, uint32_t romcrc)
 
 	mz_zip_archive _z = {};
 
-	if (is_psx() && !mz_zip_reader_init_file(&_z, cheat_zip, 0))
+	if (is_cdi() && !mz_zip_reader_init_file(&_z, cheat_zip, 0))
 	{
 		if (!cheat_init_psx(&_z, rom_path))
 		{
