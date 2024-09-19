@@ -341,7 +341,6 @@ void cdi_read_cd(uint8_t *buffer, int lba, int cnt)
 {
 	printf("req lba=%d, cnt=%d\n", lba, cnt);
 	
-	printf("toc.last %d %d %d \n", toc.last, toc.tracks[0].start, toc.tracks[0].end);
 	while (cnt > 0)
 	{
 		if (lba < toc.tracks[0].start || !toc.last)

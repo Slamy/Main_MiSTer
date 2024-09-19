@@ -3018,7 +3018,10 @@ void user_io_poll()
 				lba = spi_w(0);
 				lba = (lba & 0xFFFF) | (((uint32_t)spi_w(0)) << 16);
 				blks = ((c >> 9) & 0x3F) + 1;
-				blksz = (disk == 0 && is_cdi()) ? 2352 : (128 << ((c >> 6) & 7));
+				if ((disk == 0 && is_cdi()) || (disk == 1 && is_psx()))
+					blksz = 2352;
+				else
+					blksz = 128 << ((c >> 6) & 7);
 
 				sz = blksz * blks;
 				if (sz > sizeof(buffer[0]))
@@ -3142,12 +3145,20 @@ void user_io_poll()
 			{
 				uint32_t buf_n = sizeof(buffer[0]) / blksz;
 				unsigned int psx_blksz = 0;
+				if (is_psx() && blksz == 2352)
+				{
+					//returns 0 if the mounted disk is not a chd, otherwise returns the chd hunksize in bytes
+					psx_blksz = psx_chd_hunksize();
+					if (psx_blksz && psx_blksz <= sizeof(buffer[0])) buf_n = psx_blksz / blksz;
+				}
+
 				if (is_cdi() && blksz == 2352)
 				{
 					//returns 0 if the mounted disk is not a chd, otherwise returns the chd hunksize in bytes
 					psx_blksz = cdi_chd_hunksize();
 					if (psx_blksz && psx_blksz <= sizeof(buffer[0])) buf_n = psx_blksz / blksz;
 				}
+				
 				printf("SD RD (%llu,%d) on %d, WIDE=%d\n", lba, blksz, disk, fio_size);
 
 				int done = 0;
@@ -3156,7 +3167,15 @@ void user_io_poll()
 				if ((buffer_lba[disk] == -1LLU) || lba < buffer_lba[disk] || (lba + blks - buffer_lba[disk]) > buf_n)
 				{
 					buffer_lba[disk] = -1;
-					if (blksz == 2352 && is_cdi())
+					
+					if (blksz == 2352 && is_psx())
+					{
+						diskled_on();
+						psx_read_cd(buffer[disk], lba, buf_n);
+						done = 1;
+						buffer_lba[disk] = lba;
+					}
+					else if (blksz == 2352 && is_cdi())
 					{
 						diskled_on();
 						cdi_read_cd(buffer[disk], lba, buf_n);
@@ -3235,7 +3254,12 @@ void user_io_poll()
 				{
 					diskled_on();
 					lba += blks;
-					if (blksz == 2352 && is_cdi())
+					if (blksz == 2352 && is_psx())
+					{
+						psx_read_cd(buffer[disk], lba, buf_n);
+						buffer_lba[disk] = lba;
+					}
+					else if (blksz == 2352 && is_cdi())
 					{
 						cdi_read_cd(buffer[disk], lba, buf_n);
 						buffer_lba[disk] = lba;
