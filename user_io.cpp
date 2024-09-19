@@ -3017,8 +3017,6 @@ void user_io_poll()
 				spi_w(0);
 				lba = spi_w(0);
 				lba = (lba & 0xFFFF) | (((uint32_t)spi_w(0)) << 16);
-				
-	lba += 150;
 				blks = ((c >> 9) & 0x3F) + 1;
 				blksz = (disk == 0 && is_cdi()) ? 2352 : (128 << ((c >> 6) & 7));
 
