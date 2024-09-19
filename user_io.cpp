@@ -3145,7 +3145,7 @@ void user_io_poll()
 				if (is_cdi() && blksz == 2352)
 				{
 					//returns 0 if the mounted disk is not a chd, otherwise returns the chd hunksize in bytes
-					psx_blksz = psx_chd_hunksize();
+					psx_blksz = cdi_chd_hunksize();
 					if (psx_blksz && psx_blksz <= sizeof(buffer[0])) buf_n = psx_blksz / blksz;
 				}
 				printf("SD RD (%llu,%d) on %d, WIDE=%d\n", lba, blksz, disk, fio_size);
@@ -3159,7 +3159,7 @@ void user_io_poll()
 					if (blksz == 2352 && is_cdi())
 					{
 						diskled_on();
-						psx_read_cd(buffer[disk], lba, buf_n);
+						cdi_read_cd(buffer[disk], lba, buf_n);
 						done = 1;
 						buffer_lba[disk] = lba;
 					}
@@ -3194,7 +3194,7 @@ void user_io_poll()
 									memcpy(buffer[disk], "HUBM\x00\x88\x10\x80", 8);
 								}
 							}
-							else if (is_cdi())
+							else if (is_psx())
 							{
 								psx_fill_blanksave(buffer[disk], lba, blks);
 							}
@@ -3237,7 +3237,7 @@ void user_io_poll()
 					lba += blks;
 					if (blksz == 2352 && is_cdi())
 					{
-						psx_read_cd(buffer[disk], lba, buf_n);
+						cdi_read_cd(buffer[disk], lba, buf_n);
 						buffer_lba[disk] = lba;
 					}
 					else if (FileSeek(&sd_image[disk], lba * blksz, SEEK_SET) &&
@@ -3539,7 +3539,8 @@ void user_io_poll()
 	if (is_megacd()) mcd_poll();
 	if (is_pce()) pcecd_poll();
 	if (is_saturn()) saturn_poll();
-	if (is_cdi()) psx_poll();
+	if (is_cdi()) cdi_poll();
+	if (is_psx()) psx_poll();
 	if (is_neogeo_cd()) neocd_poll();
 	if (is_n64()) n64_poll();
 	process_ss(0);
