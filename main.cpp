@@ -69,25 +69,18 @@ int main(int argc, char *argv[])
 	}
 
 	FindStorage();
-	printf("%s %d\n",__FILE__,__LINE__);
-
 	user_io_init((argc > 1) ? argv[1] : "",(argc > 2) ? argv[2] : NULL);
-	printf("%s %d\n",__FILE__,__LINE__);
+
 #ifdef USE_SCHEDULER
 	scheduler_init();
-	printf("%s %d\n",__FILE__,__LINE__);
-
 	scheduler_run();
 #else
 	while (1)
 	{
-	printf("%s %d\n",__FILE__,__LINE__);
-
 		if (!is_fpga_ready(1))
 		{
 			fpga_wait_to_reset();
 		}
-	printf("%s %d\n",__FILE__,__LINE__);
 
 		user_io_poll();
 		input_poll(0);

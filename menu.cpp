@@ -2225,9 +2225,9 @@ void HandleUI(void)
 
 						memcpy(Selected_tmp, Selected_S[(int)ioctl_index], sizeof(Selected_tmp));
 						if (is_x86() || is_pcxt()) strcpy(Selected_tmp, x86_get_image_path(ioctl_index));
-						if (is_cdi() && (ioctl_index == 2 || ioctl_index == 3)) fs_Options |= SCANO_SAVES;
+						if (is_psx() && (ioctl_index == 2 || ioctl_index == 3)) fs_Options |= SCANO_SAVES;
 
-						if (is_saturn() || is_pce() || is_megacd() || is_x86() || (is_cdi() && !(fs_Options & SCANO_SAVES)) || is_neogeo())
+						if (is_saturn() || is_pce() || is_megacd() || is_x86() || (is_cdi()  || (is_psx() && !(fs_Options & SCANO_SAVES)) || is_neogeo())
 						{
 							//look for CHD too
 							if (!strcasestr(ext, "CHD"))
@@ -2249,7 +2249,7 @@ void HandleUI(void)
 							fs_Options |= SCANO_NOZIP;
 						}
 
-						if (is_cdi()) fs_Options |= SCANO_NOZIP;
+						if (is_psx()) fs_Options |= SCANO_NOZIP;
 
 						if (!mgl->done) menustate = MENU_GENERIC_IMAGE_SELECTED;
 						else if (select) SelectFile(Selected_tmp, ext, fs_Options, fs_MenuSelect, fs_MenuCancel);
@@ -2495,8 +2495,7 @@ void HandleUI(void)
 			}
 			else if (is_cdi())
 			{
-				printf("Derp! %d %d %s\n",ioctl_index,selPath);
-				psx_mount_cd(0, ioctl_index, selPath);
+				cdi_mount_cd(ioctl_index, selPath);
 			}
 			else if (is_saturn())
 			{
