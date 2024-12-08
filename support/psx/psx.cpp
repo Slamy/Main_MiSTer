@@ -429,6 +429,8 @@ static void send_cue_and_metadata(toc_t *table, uint16_t libcrypt_mask, enum reg
 
 static void psx_mount_save(const char *filename)
 {
+	printf("%s %s\n", __func__, filename);
+
 	user_io_set_index(2);
 	if (strlen(filename))
 	{
