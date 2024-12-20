@@ -3036,7 +3036,7 @@ void user_io_poll()
 					sz = blksz * blks;
 				}
 
-				//if (op) printf("c=%X, op=%d, blkpow=%d, sz=%d, lba=%llu, disk=%d\n", c, op, blkpow, sz, lba, disk);
+				if (op) printf("c=%X, op=%d, sz=%d, lba=%llu, disk=%d\n", c, op, sz, lba, disk);
 			}
 			else
 			{
@@ -3162,7 +3162,8 @@ void user_io_poll()
 					unsigned int psx_blksz = cdi_chd_hunksize();
 					if (psx_blksz && psx_blksz <= sizeof(buffer[0])) buf_n = psx_blksz / blksz;
 				}
-				//printf("SD RD (%llu,%d) on %d, WIDE=%d\n", lba, blksz, disk, fio_size);
+				
+				printf("SD RD (%llu,%d) on %d, WIDE=%d\n", lba, blksz, disk, fio_size);
 
 				int done = 0;
 				uint32_t offset;

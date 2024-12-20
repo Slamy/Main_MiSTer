@@ -30,6 +30,8 @@ struct subcode
 	uint16_t mode1_crc1;
 };
 
+static_assert(sizeof(struct subcode)==24);
+
 static char buf[1024];
 #define CD_SECTOR_LEN 2352
 #define CDIC_BUFFER_SIZE (CD_SECTOR_LEN + sizeof(subcode))
@@ -417,6 +419,8 @@ void subcode_data(int lba, struct subcode &out)
 	s = lba / 75;
 	f = lba % 75;
 
+	printf("req lba=%d   %02x %02x %02x\n", lba,BCD(m),BCD(s),BCD(f));
+
 	out.control = 0x41;
 	out.track = toc.GetTrackByLBA(lba);
 	out.index = 1;
@@ -441,7 +445,7 @@ void subcode_data(int lba, struct subcode &out)
 
 void cdi_read_cd(uint8_t *buffer, int lba, int cnt)
 {
-	// printf("req lba=%d, cnt=%d\n", lba, cnt);
+	printf("req lba=%d, cnt=%d\n", lba, cnt);
 
 	while (cnt > 0)
 	{
@@ -513,7 +517,7 @@ void cdi_read_cd(uint8_t *buffer, int lba, int cnt)
 							break;
 
 						buffer += CD_SECTOR_LEN;
-						subcode_data(lba, *reinterpret_cast<struct subcode *>(&buffer));
+						subcode_data(lba, *reinterpret_cast<struct subcode *>(buffer));
 						buffer += sizeof(struct subcode);
 						cnt--;
 						lba++;
@@ -524,7 +528,7 @@ void cdi_read_cd(uint8_t *buffer, int lba, int cnt)
 		}
 
 		buffer += CD_SECTOR_LEN;
-		subcode_data(lba, *reinterpret_cast<struct subcode *>(&buffer));
+		subcode_data(lba, *reinterpret_cast<struct subcode *>(buffer));
 		buffer += sizeof(struct subcode);
 		cnt--;
 		lba++;
