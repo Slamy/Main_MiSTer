@@ -13,6 +13,7 @@
 #include "../../cd.h"
 #include "../chd/mister_chd.h"
 #include <libchdr/chd.h>
+#include <arpa/inet.h>
 
 struct subcode
 {
@@ -30,7 +31,7 @@ struct subcode
 	uint16_t mode1_crc1;
 };
 
-static_assert(sizeof(struct subcode)==24);
+static_assert(sizeof(struct subcode) == 24);
 
 static char buf[1024];
 #define CD_SECTOR_LEN 2352
@@ -419,28 +420,28 @@ void subcode_data(int lba, struct subcode &out)
 	s = lba / 75;
 	f = lba % 75;
 
-	printf("req lba=%d   %02x %02x %02x\n", lba,BCD(m),BCD(s),BCD(f));
+	printf("req lba=%d   %02x %02x %02x\n", lba, BCD(m), BCD(s), BCD(f));
 
-	out.control = 0x41;
-	out.track = toc.GetTrackByLBA(lba);
-	out.index = 1;
-	out.mode1_mins = BCD(m);
-	out.mode1_secs = BCD(s);
-	out.mode1_frac = BCD(f);
+	out.control = htons(0x41);
+	out.track = htons(toc.GetTrackByLBA(lba) + 1);
+	out.index = htons(1);
+	out.mode1_mins = htons(BCD(m));
+	out.mode1_secs = htons(BCD(s));
+	out.mode1_frac = htons(BCD(f));
 	out.mode1_zero = 0;
-	out.mode1_amins = BCD(m);
-	out.mode1_asecs = BCD(s);
-	out.mode1_afrac = BCD(f);
-	out.mode1_crc0 = 0xff;
-	out.mode1_crc1 = 0xff;
+	out.mode1_amins = htons(BCD(m));
+	out.mode1_asecs = htons(BCD(s));
+	out.mode1_afrac = htons(BCD(f));
+	out.mode1_crc0 = htons(0xff);
+	out.mode1_crc1 = htons(0xff);
 
 	uint16_t crc_accum = 0;
-	uint16_t *crc = reinterpret_cast<uint16_t *>(&out);
+	uint8_t *crc = reinterpret_cast<uint8_t*>(&out);
 	for (int i = 0; i < 12; i++)
-		crc_accum = CRC_CCITT_ROUND(crc_accum, crc[i]);
+		crc_accum = CRC_CCITT_ROUND(crc_accum, crc[1+i*2]);
 
-	out.mode1_crc0 = (uint8_t)(crc_accum >> 8);
-	out.mode1_crc1 = (uint8_t)crc_accum;
+	out.mode1_crc0 = htons((crc_accum >> 8) & 0xff);
+	out.mode1_crc1 = htons(crc_accum & 0xff);
 }
 
 void cdi_read_cd(uint8_t *buffer, int lba, int cnt)
