@@ -462,11 +462,14 @@ const uint16_t s_crc_ccitt_table[256] =
 
 void subcode_data(int lba, struct subcode &out)
 {
+	int fake_lba = lba;
+	if (fake_lba < 150)
+		fake_lba += 150;
 	uint8_t m, s, f;
-	m = lba / (60 * 75);
-	lba -= m * (60 * 75);
-	s = lba / 75;
-	f = lba % 75;
+	m = fake_lba / (60 * 75);
+	fake_lba -= m * (60 * 75);
+	s = fake_lba / 75;
+	f = fake_lba % 75;
 
 	if (lba < toc_entry_count)
 	{
@@ -485,7 +488,7 @@ void subcode_data(int lba, struct subcode &out)
 		out.mode1_crc0 = htons(0xff);
 		out.mode1_crc1 = htons(0xff);
 
-		printf("toc  lba=%d   %02x %02x %02x %02x %02x\n", lba, out.control, out.index, out.mode1_amins, out.mode1_asecs, out.mode1_afrac);
+		// printf("toc  lba=%d   %02x %02x %02x %02x %02x\n", lba, out.control, out.index, out.mode1_amins, out.mode1_asecs, out.mode1_afrac);
 	}
 	else
 	{
@@ -503,7 +506,7 @@ void subcode_data(int lba, struct subcode &out)
 		out.mode1_crc0 = htons(0xff);
 		out.mode1_crc1 = htons(0xff);
 
-		printf("data lba=%d   %02x %02x %02x %02x %02x\n", lba, out.control, out.track, BCD(m), BCD(s), BCD(f));
+		// printf("data lba=%d   %02x %02x %02x %02x %02x\n", lba, out.control, out.track, BCD(m), BCD(s), BCD(f));
 	}
 
 	uint16_t crc_accum = 0;
@@ -513,6 +516,12 @@ void subcode_data(int lba, struct subcode &out)
 
 	out.mode1_crc0 = htons((crc_accum >> 8) & 0xff);
 	out.mode1_crc1 = htons(crc_accum & 0xff);
+
+	printf("subcode %d   %02x %02x %02x %02x %02x %02x     %02x %02x %02x %02x %02x %02x\n", lba,
+		ntohs(out.control), ntohs(out.track), ntohs(out.index),
+		   ntohs(out.mode1_mins), ntohs(out.mode1_secs), ntohs(out.mode1_frac), ntohs(out.mode1_zero),
+		   ntohs(out.mode1_amins), ntohs(out.mode1_asecs), ntohs(out.mode1_afrac), ntohs(out.mode1_crc0),
+		   ntohs(out.mode1_crc1));
 }
 
 void cdi_read_cd(uint8_t *buffer, int lba, int cnt)
