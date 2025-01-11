@@ -339,13 +339,14 @@ static int load_cd_image(const char *filename, toc_t *table)
 	return 0;
 }
 
-static void prepare_toc_ptr(toc_t *toc)
+static void prepare_toc_buffer(toc_t *toc)
 {
 	for (int i = 0; i < toc->last; i++)
 	{
-		printf("\x1b[32mCDI: Track = %u, start = %u, end = %u, offset = %d, sector_size=%d, type = %u\n\x1b[0m", i, toc->tracks[i].start, toc->tracks[i].end, toc->tracks[i].offset, toc->tracks[i].sector_size, toc->tracks[i].type);
+		printf("CDI: Track = %u, start = %u, end = %u, offset = %d, sector_size=%d, type = %u, pregap=%d\n", i, toc->tracks[i].start, toc->tracks[i].end,
+			   toc->tracks[i].offset, toc->tracks[i].sector_size, toc->tracks[i].type, toc->tracks[i].pregap);
 		if (toc->tracks[i].indexes[1])
-			printf("\x1b[32mCDI: Track = %u,Index1 = %u seconds\n\x1b[0m", i, toc->tracks[i].indexes[1] / 75);
+			printf("CDI: Track = %d, Index1 = %d\n", i, toc->tracks[i].indexes[1]);
 	}
 
 	struct toc_entry *toc_ptr = toc_buffer;
@@ -369,9 +370,7 @@ static void prepare_toc_ptr(toc_t *toc)
 
 	for (int i = 0; i < toc->last; i++)
 	{
-		int lba = toc->tracks[i].start;
-		if (lba == 0)
-			lba += 150;
+		int lba = toc->tracks[i].start + 150;
 		uint8_t m, s, f;
 		m = lba / (60 * 75);
 		lba -= m * (60 * 75);
@@ -384,7 +383,7 @@ static void prepare_toc_ptr(toc_t *toc)
 	add_entry(1, 0xA1, BCD(toc->last), 0, 0);
 
 	{
-		int lba = toc->end;
+		int lba = toc->end + 150;
 		uint8_t m, s, f;
 		m = lba / (60 * 75);
 		lba -= m * (60 * 75);
@@ -462,25 +461,26 @@ const uint16_t s_crc_ccitt_table[256] =
 
 void subcode_data(int lba, struct subcode &out)
 {
-	int fake_lba = lba;
-	if (fake_lba < 150)
-		fake_lba += 150;
-	uint8_t m, s, f;
-	m = fake_lba / (60 * 75);
-	fake_lba -= m * (60 * 75);
-	s = fake_lba / 75;
-	f = fake_lba % 75;
+	printf("subcode_data %d\n", lba);
+	if (lba < 0)
+		lba = -lba;
 
-	if (lba < toc_entry_count)
+	uint8_t am, as, af;
+	am = lba / (60 * 75);
+	int rem_lba = lba - am * (60 * 75);
+	as = rem_lba / 75;
+	af = rem_lba % 75;
+
+	if (lba < 150)
 	{
-		auto &toc_entry = toc_buffer[lba];
+		auto &toc_entry = toc_buffer[lba % toc_entry_count];
 
 		out.control = htons(toc_entry.control);
 		out.track = 0; // Track 0 for TOC
 		out.index = htons(toc_entry.track);
-		out.mode1_mins = htons(BCD(m));
-		out.mode1_secs = htons(BCD(s));
-		out.mode1_frac = htons(BCD(f));
+		out.mode1_mins = htons(BCD(am));
+		out.mode1_secs = htons(BCD(as));
+		out.mode1_frac = htons(BCD(af));
 		out.mode1_zero = 0;
 		out.mode1_amins = htons(toc_entry.m);
 		out.mode1_asecs = htons(toc_entry.s);
@@ -492,17 +492,36 @@ void subcode_data(int lba, struct subcode &out)
 	}
 	else
 	{
-		int track = toc.GetTrackByLBA(lba);
+		int track = toc.GetTrackByLBA(lba + 150);
+
+		int track_lba = lba - toc.tracks[track].start;
+		printf("%d %d %d %d\n", track_lba, lba, track, toc.tracks[track].start);
+		int index = 1;
+		/*
+		if (track == 0 && track_lba >= 150)
+			track_lba -= 150;
+			*/
+		if (track_lba < 0)
+		{
+			track_lba = -track_lba;
+			index = 0;
+		};
+		uint8_t tm, ts, tf;
+		tm = track_lba / (60 * 75);
+		track_lba -= tm * (60 * 75);
+		ts = track_lba / 75;
+		tf = track_lba % 75;
+
 		out.control = htons(toc.tracks[track].type ? 0x41 : 0x01);
 		out.track = htons(BCD(track + 1));
-		out.index = htons(1);
-		out.mode1_mins = htons(BCD(m));
-		out.mode1_secs = htons(BCD(s));
-		out.mode1_frac = htons(BCD(f));
+		out.index = htons(BCD(index));
+		out.mode1_mins = htons(BCD(tm));
+		out.mode1_secs = htons(BCD(ts));
+		out.mode1_frac = htons(BCD(tf));
 		out.mode1_zero = 0;
-		out.mode1_amins = htons(BCD(m));
-		out.mode1_asecs = htons(BCD(s));
-		out.mode1_afrac = htons(BCD(f));
+		out.mode1_amins = htons(BCD(am));
+		out.mode1_asecs = htons(BCD(as));
+		out.mode1_afrac = htons(BCD(af));
 		out.mode1_crc0 = htons(0xff);
 		out.mode1_crc1 = htons(0xff);
 
@@ -518,7 +537,7 @@ void subcode_data(int lba, struct subcode &out)
 	out.mode1_crc1 = htons(crc_accum & 0xff);
 
 	printf("subcode %d   %02x %02x %02x %02x %02x %02x     %02x %02x %02x %02x %02x %02x\n", lba,
-		ntohs(out.control), ntohs(out.track), ntohs(out.index),
+		   ntohs(out.control), ntohs(out.track), ntohs(out.index),
 		   ntohs(out.mode1_mins), ntohs(out.mode1_secs), ntohs(out.mode1_frac), ntohs(out.mode1_zero),
 		   ntohs(out.mode1_amins), ntohs(out.mode1_asecs), ntohs(out.mode1_afrac), ntohs(out.mode1_crc0),
 		   ntohs(out.mode1_crc1));
@@ -527,7 +546,10 @@ void subcode_data(int lba, struct subcode &out)
 void cdi_read_cd(uint8_t *buffer, int lba, int cnt)
 {
 	printf("req lba=%d, cnt=%d\n", lba, cnt);
-
+#if 0
+	if (lba >= 150)
+		lba -= 150;
+#endif
 	while (cnt > 0)
 	{
 		if (lba < toc.tracks[0].start || !toc.last)
@@ -635,7 +657,7 @@ void cdi_mount_cd(int s_index, const char *filename)
 		if (load_cd_image(filename, &toc) && toc.last)
 		{
 			cdi_mount_save(filename);
-			prepare_toc_ptr(&toc);
+			prepare_toc_buffer(&toc);
 			user_io_set_index(0);
 			mount_cd(toc.end * CD_SECTOR_LEN, s_index);
 			loaded = 1;

@@ -419,7 +419,7 @@ static void ini_parse_var(char* buf)
 			ini_parse_numeric(var, &buf[i], var->var);
 			if (!strcasecmp(var->name, "DEBUG"))
 			{
-				stdout = cfg.debug ? orig_stdout : dev_null;
+				stdout = orig_stdout;
 			}
 			break;
 		}
@@ -440,7 +440,6 @@ static void ini_parse(int alt, const char *vmode)
 		{
 			int null_fd = fileno(dev_null);
 			if (null_fd >= 0) fcntl(null_fd, F_SETFD, FD_CLOEXEC);
-			stdout = dev_null;
 		}
 	}
 
