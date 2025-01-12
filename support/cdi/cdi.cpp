@@ -268,7 +268,6 @@ static int load_cue(const char *filename, toc_t *table)
 		{
 			if (!table->tracks[table->last].f.opened())
 			{
-				printf("Not open %d\n",table->last);
 				table->tracks[table->last].start = bb + ss * 75 + mm * 60 * 75 + 150;
 				if (table->tracks[table->last].pregap)
 					table->tracks[table->last].start += pregap;
@@ -277,13 +276,11 @@ static int load_cue(const char *filename, toc_t *table)
 				if (table->last)
 				{
 					table->tracks[table->last - 1].end = table->tracks[table->last].start - 1;
-					printf("Pregap %d %d\n", table->last, pregap);
 					if (pregap)
 					{
 						table->tracks[table->last].indexes[1] = table->tracks[table->last].start - pregap;
 						if (!table->tracks[table->last].pregap)
 						{
-							printf("Barf!\n");
 							table->tracks[table->last].offset -= CD_SECTOR_LEN * table->tracks[table->last].indexes[1];
 							table->tracks[table->last].indexes[1] = table->tracks[table->last].start - pregap;
 						}
@@ -300,7 +297,6 @@ static int load_cue(const char *filename, toc_t *table)
 			}
 			else
 			{
-				printf("Already open %d!\n",table->last);
 				table->tracks[table->last].indexes[1] = bb + ss * 75 + mm * 60 * 75;
 				if (!table->last)
 					table->tracks[table->last].indexes[1] = 150;
@@ -466,14 +462,9 @@ const uint16_t s_crc_ccitt_table[256] =
 
 void subcode_data(int lba, struct subcode &out)
 {
-	printf("subcode_data %d\n", lba);
-	/*
-	if (lba < 0)
-		lba = -lba;
-	*/
-
 	if (lba < 0)
 	{
+		// TOC is expected by the core at lba -65536
 		lba += 65536;
 
 		uint8_t am, as, af;
@@ -496,8 +487,6 @@ void subcode_data(int lba, struct subcode &out)
 		out.mode1_afrac = htons(toc_entry.f);
 		out.mode1_crc0 = htons(0xff);
 		out.mode1_crc1 = htons(0xff);
-
-		// printf("toc  lba=%d   %02x %02x %02x %02x %02x\n", lba, out.control, out.index, out.mode1_amins, out.mode1_asecs, out.mode1_afrac);
 	}
 	else
 	{
@@ -507,20 +496,21 @@ void subcode_data(int lba, struct subcode &out)
 		as = rem_lba / 75;
 		af = rem_lba % 75;
 
+		// TODO Why am I adding 150 here?
+		// Not doing that will result into the previous track, skipping index 0 if it exists
 		int track = toc.GetTrackByLBA(lba + 150);
 
 		int track_lba = lba - toc.tracks[track].start;
-		printf("%d %d %d %d\n", track_lba, lba, track, toc.tracks[track].start);
 		int index = 1;
-		/*
-		if (track == 0 && track_lba >= 150)
-			track_lba -= 150;
-			*/
+
 		if (track_lba < 0)
 		{
+			// Fix index 0 tracks which are defined as pause
+			// The timecode seems to go backwards on a real machine
 			track_lba = -track_lba;
 			index = 0;
 		};
+
 		uint8_t tm, ts, tf;
 		tm = track_lba / (60 * 75);
 		track_lba -= tm * (60 * 75);
@@ -539,8 +529,6 @@ void subcode_data(int lba, struct subcode &out)
 		out.mode1_afrac = htons(BCD(af));
 		out.mode1_crc0 = htons(0xff);
 		out.mode1_crc1 = htons(0xff);
-
-		// printf("data lba=%d   %02x %02x %02x %02x %02x\n", lba, out.control, out.track, BCD(m), BCD(s), BCD(f));
 	}
 
 	uint16_t crc_accum = 0;
@@ -550,21 +538,18 @@ void subcode_data(int lba, struct subcode &out)
 
 	out.mode1_crc0 = htons((crc_accum >> 8) & 0xff);
 	out.mode1_crc1 = htons(crc_accum & 0xff);
-
+#if 0
 	printf("subcode %d   %02x %02x %02x %02x %02x %02x     %02x %02x %02x %02x %02x %02x\n", lba,
 		   ntohs(out.control), ntohs(out.track), ntohs(out.index),
 		   ntohs(out.mode1_mins), ntohs(out.mode1_secs), ntohs(out.mode1_frac), ntohs(out.mode1_zero),
 		   ntohs(out.mode1_amins), ntohs(out.mode1_asecs), ntohs(out.mode1_afrac), ntohs(out.mode1_crc0),
 		   ntohs(out.mode1_crc1));
+#endif
 }
 
 void cdi_read_cd(uint8_t *buffer, int lba, int cnt)
 {
-	printf("req lba=%d, cnt=%d\n", lba, cnt);
-#if 0
-	if (lba >= 150)
-		lba -= 150;
-#endif
+	// printf("req lba=%d, cnt=%d\n", lba, cnt);
 	while (cnt > 0)
 	{
 		if (lba < toc.tracks[0].start || !toc.last)
