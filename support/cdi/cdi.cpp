@@ -268,7 +268,8 @@ static int load_cue(const char *filename, toc_t *table)
 		{
 			if (!table->tracks[table->last].f.opened())
 			{
-				table->tracks[table->last].start = bb + ss * 75 + mm * 60 * 75;
+				printf("Not open %d\n",table->last);
+				table->tracks[table->last].start = bb + ss * 75 + mm * 60 * 75 + 150;
 				if (table->tracks[table->last].pregap)
 					table->tracks[table->last].start += pregap;
 				// Subtract the fake 150 sector pregap used for the first data track
@@ -276,11 +277,13 @@ static int load_cue(const char *filename, toc_t *table)
 				if (table->last)
 				{
 					table->tracks[table->last - 1].end = table->tracks[table->last].start - 1;
+					printf("Pregap %d %d\n", table->last, pregap);
 					if (pregap)
 					{
 						table->tracks[table->last].indexes[1] = table->tracks[table->last].start - pregap;
 						if (!table->tracks[table->last].pregap)
 						{
+							printf("Barf!\n");
 							table->tracks[table->last].offset -= CD_SECTOR_LEN * table->tracks[table->last].indexes[1];
 							table->tracks[table->last].indexes[1] = table->tracks[table->last].start - pregap;
 						}
@@ -297,6 +300,7 @@ static int load_cue(const char *filename, toc_t *table)
 			}
 			else
 			{
+				printf("Already open %d!\n",table->last);
 				table->tracks[table->last].indexes[1] = bb + ss * 75 + mm * 60 * 75;
 				if (!table->last)
 					table->tracks[table->last].indexes[1] = 150;
