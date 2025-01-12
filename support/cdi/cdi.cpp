@@ -242,6 +242,8 @@ static int load_cue(const char *filename, toc_t *table)
 			{
 				table->tracks[table->last].sector_size = CD_SECTOR_LEN;
 				table->tracks[table->last].type = 0;
+				if (!table->last)
+					table->end = 150; // implicit 2 seconds pregap for track 1
 			}
 			else
 			{
@@ -258,7 +260,6 @@ static int load_cue(const char *filename, toc_t *table)
 			// Single bin specific
 			if (!table->tracks[table->last].f.opened())
 			{
-
 				pregap = bb + ss * 75 + mm * 60 * 75;
 			}
 		}
@@ -289,7 +290,7 @@ static int load_cue(const char *filename, toc_t *table)
 						}
 					}
 				}
-				else if (table->tracks[table->last].type)
+				else
 				{
 					table->tracks[table->last].indexes[1] = 150;
 				}
@@ -297,7 +298,7 @@ static int load_cue(const char *filename, toc_t *table)
 			else
 			{
 				table->tracks[table->last].indexes[1] = bb + ss * 75 + mm * 60 * 75;
-				if (table->tracks[table->last].type && !table->last)
+				if (!table->last)
 					table->tracks[table->last].indexes[1] = 150;
 				table->tracks[table->last].start = table->end;
 				table->end += (table->tracks[table->last].f.size / table->tracks[table->last].sector_size);
@@ -370,7 +371,7 @@ static void prepare_toc_buffer(toc_t *toc)
 
 	for (int i = 0; i < toc->last; i++)
 	{
-		int lba = toc->tracks[i].start + 150;
+		int lba = toc->tracks[i].start;
 		uint8_t m, s, f;
 		m = lba / (60 * 75);
 		lba -= m * (60 * 75);
@@ -383,7 +384,7 @@ static void prepare_toc_buffer(toc_t *toc)
 	add_entry(1, 0xA1, BCD(toc->last), 0, 0);
 
 	{
-		int lba = toc->end + 150;
+		int lba = toc->end;
 		uint8_t m, s, f;
 		m = lba / (60 * 75);
 		lba -= m * (60 * 75);
@@ -462,17 +463,21 @@ const uint16_t s_crc_ccitt_table[256] =
 void subcode_data(int lba, struct subcode &out)
 {
 	printf("subcode_data %d\n", lba);
+	/*
 	if (lba < 0)
 		lba = -lba;
+	*/
 
-	uint8_t am, as, af;
-	am = lba / (60 * 75);
-	int rem_lba = lba - am * (60 * 75);
-	as = rem_lba / 75;
-	af = rem_lba % 75;
-
-	if (lba < 150)
+	if (lba < 0)
 	{
+		lba += 65536;
+
+		uint8_t am, as, af;
+		am = lba / (60 * 75);
+		int rem_lba = lba - am * (60 * 75);
+		as = rem_lba / 75;
+		af = rem_lba % 75;
+
 		auto &toc_entry = toc_buffer[lba % toc_entry_count];
 
 		out.control = htons(toc_entry.control);
@@ -492,6 +497,12 @@ void subcode_data(int lba, struct subcode &out)
 	}
 	else
 	{
+		uint8_t am, as, af;
+		am = lba / (60 * 75);
+		int rem_lba = lba - am * (60 * 75);
+		as = rem_lba / 75;
+		af = rem_lba % 75;
+
 		int track = toc.GetTrackByLBA(lba + 150);
 
 		int track_lba = lba - toc.tracks[track].start;
