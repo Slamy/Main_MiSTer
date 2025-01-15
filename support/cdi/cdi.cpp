@@ -114,28 +114,17 @@ static int load_chd(const char *filename, toc_t *table)
 		return 0;
 	}
 
-	/* CD-i core expects the TOC values for track start/end to not take into account
-	 * pregap, unlike some other cores. Adjust the CHD toc to reflect this
-	 */
-
 	for (int i = 0; i < table->last; i++)
 	{
-		if (i == 0) // First track fakes a pregap even if it doesn't exist
-		{
-			table->tracks[i].indexes[1] = 150;
-			table->tracks[i].start = 150;
-			table->tracks[i].end += 150 - 1;
-		}
-		else
-		{
-			int frame_cnt = table->tracks[i].end - table->tracks[i].start;
-			frame_cnt += table->tracks[i].indexes[1];
-			table->tracks[i].start = table->tracks[i - 1].end + 1;
-			table->tracks[i].end = table->tracks[i].start + frame_cnt - 1;
-		}
+		table->tracks[i].pregap = table->tracks[i].indexes[1];
+		table->tracks[i].start += 150;
+		table->tracks[i].end += 150;
+
+		printf("\x1b[32mCHD: Track = %u, start = %u, end = %u, offset = %d, sector_size=%d, type = %u, pregap = %u\n\x1b[0m", i, table->tracks[i].start, table->tracks[i].end, table->tracks[i].offset, table->tracks[i].sector_size, table->tracks[i].type, table->tracks[i].pregap);
+		printf("\x1b[32mCHD: Track = %u, Index %u %u seconds\n\x1b[0m", i, table->tracks[i].indexes[0], table->tracks[i].indexes[1]);
 	}
 
-	table->end = table->tracks[table->last - 1].end + 1;
+	table->end += 150;
 
 	chd_hunkbuf = (uint8_t *)malloc(table->chd_hunksize);
 	chd_hunknum = -1;
@@ -163,7 +152,8 @@ static int load_cue(const char *filename, toc_t *table)
 	}
 
 	int mm, ss, bb;
-	int pregap = 0;
+	int index0 = 0;
+	int index1 = 0;
 
 	char *buf = toc;
 	while (sgets(line, sizeof(line), &buf))
@@ -216,14 +206,12 @@ static int load_cue(const char *filename, toc_t *table)
 		/* decode PREGAP commands */
 		else if (sscanf(lptr, "PREGAP %02d:%02d:%02d", &mm, &ss, &bb) == 3)
 		{
-			// Single bin specific, add pregab but subtract inherent pregap
-			pregap += bb + ss * 75 + mm * 60 * 75;
-			table->tracks[table->last].pregap = 1;
+			// TODO Find an example image
 		}
 		/* decode TRACK commands */
 		else if ((sscanf(lptr, "TRACK %02d %*s", &bb)) || (sscanf(lptr, "TRACK %d %*s", &bb)))
 		{
-			pregap = 0;
+			index0 = 0;
 			if (bb != (table->last + 1))
 			{
 				FileClose(&table->tracks[table->last].f);
@@ -257,52 +245,53 @@ static int load_cue(const char *filename, toc_t *table)
 		else if ((sscanf(lptr, "INDEX 00 %02d:%02d:%02d", &mm, &ss, &bb) == 3) ||
 				 (sscanf(lptr, "INDEX 0 %02d:%02d:%02d", &mm, &ss, &bb) == 3))
 		{
-			// Single bin specific
-			if (!table->tracks[table->last].f.opened())
-			{
-				pregap = bb + ss * 75 + mm * 60 * 75;
-			}
+			index0 = bb + ss * 75 + mm * 60 * 75;
+
+			printf("Index 0 for track %d is %d\n", table->last, index0);
 		}
 		else if ((sscanf(lptr, "INDEX 01 %02d:%02d:%02d", &mm, &ss, &bb) == 3) ||
 				 (sscanf(lptr, "INDEX 1 %02d:%02d:%02d", &mm, &ss, &bb) == 3))
 		{
+			index1 = bb + ss * 75 + mm * 60 * 75;
+
 			if (!table->tracks[table->last].f.opened())
 			{
-				table->tracks[table->last].start = bb + ss * 75 + mm * 60 * 75 + 150;
-				if (table->tracks[table->last].pregap)
-					table->tracks[table->last].start += pregap;
+				printf("Singlebin - Index 0 for track %d is %d\n", table->last, index0);
+
+				table->tracks[table->last].start = index1 + 150;
+				table->tracks[table->last].pregap = index1 - index0;
+
+				printf("Singlebin analysis %d start:%d pregap:%d\n", table->last, table->tracks[table->last].start, table->tracks[table->last].pregap);
 				// Subtract the fake 150 sector pregap used for the first data track
-				table->tracks[table->last].offset = table->tracks[table->last].start * table->tracks[table->last].sector_size;
-				if (table->last)
+				table->tracks[table->last].offset = (table->tracks[table->last].start - 150) * table->tracks[table->last].sector_size;
+				table->tracks[table->last - 1].end = table->tracks[table->last].start - 1 - table->tracks[table->last].pregap;
+#if 0
+				if (pregap)
 				{
-					table->tracks[table->last - 1].end = table->tracks[table->last].start - 1;
-					if (pregap)
+					table->tracks[table->last].indexes[1] = table->tracks[table->last].start - pregap;
+					if (!table->tracks[table->last].pregap)
 					{
+						table->tracks[table->last].offset -= CD_SECTOR_LEN * table->tracks[table->last].indexes[1];
 						table->tracks[table->last].indexes[1] = table->tracks[table->last].start - pregap;
-						if (!table->tracks[table->last].pregap)
-						{
-							table->tracks[table->last].offset -= CD_SECTOR_LEN * table->tracks[table->last].indexes[1];
-							table->tracks[table->last].indexes[1] = table->tracks[table->last].start - pregap;
-						}
-						else
-						{
-							table->tracks[table->last].indexes[1] = pregap;
-						}
+					}
+					else
+					{
+						table->tracks[table->last].indexes[1] = pregap;
 					}
 				}
-				else
-				{
-					table->tracks[table->last].indexes[1] = 150;
-				}
+#endif
+				printf("Singlebin - Track %d for Index 1 start:%d end:%d\n", table->last, table->tracks[table->last].start, table->end);
 			}
 			else
 			{
-				table->tracks[table->last].indexes[1] = bb + ss * 75 + mm * 60 * 75;
-				if (!table->last)
-					table->tracks[table->last].indexes[1] = 150;
-				table->tracks[table->last].start = table->end;
+				printf("Multibin - Index 0 for track %d is %d\n", table->last, index0);
+
+				table->tracks[table->last].start = table->end + index0 + index1;
+				table->tracks[table->last].pregap = index1 - index0;
 				table->end += (table->tracks[table->last].f.size / table->tracks[table->last].sector_size);
 				table->tracks[table->last].offset = 0;
+
+				printf("Multibin - Track %d for Index 1 start:%d end:%d\n", table->last, table->tracks[table->last].start, table->end);
 			}
 			table->tracks[table->last].end = table->end - 1;
 			table->last++;
@@ -313,9 +302,8 @@ static int load_cue(const char *filename, toc_t *table)
 
 	for (int i = 0; i < table->last; i++)
 	{
-		printf("\x1b[32mCDI: Track = %u, start = %u, end = %u, offset = %d, sector_size=%d, type = %u\n\x1b[0m", i, table->tracks[i].start, table->tracks[i].end, table->tracks[i].offset, table->tracks[i].sector_size, table->tracks[i].type);
-		if (table->tracks[i].indexes[1])
-			printf("\x1b[32mCDI: Track = %u,Index1 = %u seconds\n\x1b[0m", i, table->tracks[i].indexes[1] / 75);
+		printf("\x1b[32mCUE: Track = %u, start = %u, end = %u, offset = %d, sector_size=%d, type = %u, pregap = %u\n\x1b[0m", i, table->tracks[i].start, table->tracks[i].end, table->tracks[i].offset, table->tracks[i].sector_size, table->tracks[i].type, table->tracks[i].pregap);
+		printf("\x1b[32mCUE: Track = %u, Index %u %u seconds\n\x1b[0m", i, table->tracks[i].indexes[0], table->tracks[i].indexes[1]);
 	}
 
 	return 1;
@@ -377,7 +365,7 @@ static void prepare_toc_buffer(toc_t *toc)
 		lba -= m * (60 * 75);
 		s = lba / 75;
 		f = lba % 75;
-		add_entry((toc->tracks[i].type ? 0x41 : 0x01), i + 1, BCD(m), BCD(s), BCD(f));
+		add_entry((toc->tracks[i].type ? 0x41 : 0x01), BCD(i + 1), BCD(m), BCD(s), BCD(f));
 	}
 
 	add_entry(1, 0xA0, 1, 0, 0);
@@ -487,6 +475,10 @@ void subcode_data(int lba, struct subcode &out)
 		out.mode1_afrac = htons(toc_entry.f);
 		out.mode1_crc0 = htons(0xff);
 		out.mode1_crc1 = htons(0xff);
+#if 0
+		if (lba > toc_entry_count*2)
+			out.track = htons(1);
+#endif
 	}
 	else
 	{
@@ -538,7 +530,7 @@ void subcode_data(int lba, struct subcode &out)
 
 	out.mode1_crc0 = htons((crc_accum >> 8) & 0xff);
 	out.mode1_crc1 = htons(crc_accum & 0xff);
-#if 0
+#if 1
 	printf("subcode %d   %02x %02x %02x %02x %02x %02x     %02x %02x %02x %02x %02x %02x\n", lba,
 		   ntohs(out.control), ntohs(out.track), ntohs(out.index),
 		   ntohs(out.mode1_mins), ntohs(out.mode1_secs), ntohs(out.mode1_frac), ntohs(out.mode1_zero),
@@ -549,11 +541,21 @@ void subcode_data(int lba, struct subcode &out)
 
 void cdi_read_cd(uint8_t *buffer, int lba, int cnt)
 {
-	// printf("req lba=%d, cnt=%d\n", lba, cnt);
+	int calc_lba = lba;
+	uint8_t am, as, af;
+	am = calc_lba / (60 * 75);
+	calc_lba -= am * (60 * 75);
+	as = calc_lba / 75;
+	af = calc_lba % 75;
+
+	printf("req lba=%d, cnt=%d   %02d:%02d:%02d   %d %d\n", lba, cnt, am, as, af,
+		   toc.tracks[0].start, toc.tracks[0].pregap);
+
 	while (cnt > 0)
 	{
-		if (lba < toc.tracks[0].start || !toc.last)
+		if (lba < 0 || !toc.last)
 		{
+			printf("Empty track!\n");
 			memset(buffer, 0, CD_SECTOR_LEN);
 		}
 		else
@@ -562,36 +564,29 @@ void cdi_read_cd(uint8_t *buffer, int lba, int cnt)
 
 			for (int i = 0; i < toc.last; i++)
 			{
-				if (lba >= toc.tracks[i].start && lba <= toc.tracks[i].end)
+				if (lba >= (toc.tracks[i].start - toc.tracks[i].pregap) && lba <= toc.tracks[i].end)
 				{
+					printf("Deliver from Track %i offset:%d lba:%d start:%d pregap:%d\n", i, toc.tracks[i].offset, lba, toc.tracks[i].start, toc.tracks[i].pregap);
 					if (!toc.chd_f)
 					{
 						if (toc.tracks[i].offset)
 						{
+							printf("Offset %i\n", toc.tracks[i].offset + (lba - toc.tracks[i].start));
 							FileSeek(&toc.tracks[0].f, toc.tracks[i].offset + ((lba - toc.tracks[i].start) * CD_SECTOR_LEN), SEEK_SET);
 						}
 						else
 						{
+							printf("No Offset %i\n", (lba - toc.tracks[i].start));
 							FileSeek(&toc.tracks[i].f, (lba - toc.tracks[i].start) * CD_SECTOR_LEN, SEEK_SET);
 						}
 					}
+
 					while (cnt)
 					{
-						if (toc.tracks[i + 1].pregap && lba > (toc.tracks[i + 1].start - toc.tracks[i + 1].indexes[1]))
+						if (toc.chd_f)
 						{
-							// The TOC is setup so that pregap sectors are actually part of the
-							// PREVIOUS track. If the pregap field is set the file doesn't contain
-							// this data, so we have to fake it.
-							// Check the next track's pregap and indexes[1] values to determine
-							// if we're reading pregap sectors
-
-							memset(buffer, 0x0, CD_SECTOR_LEN);
-						}
-						else if (toc.chd_f)
-						{
-
 							// The "fake" 150 sector pregap moves all the LBAs up by 150, so adjust here to read where the core actually wants data from
-							int read_lba = lba - toc.tracks[0].indexes[1];
+							int read_lba = lba - 150;
 							if (mister_chd_read_sector(toc.chd_f, (read_lba + toc.tracks[i].offset), 0, 0, CD_SECTOR_LEN, buffer, chd_hunkbuf, &chd_hunknum) == CHDERR_NONE)
 							{
 								if (!toc.tracks[i].type) // CHD requires byteswap of audio data
