@@ -571,13 +571,13 @@ void cdi_read_cd(uint8_t *buffer, int lba, int cnt)
 					{
 						if (toc.tracks[i].offset)
 						{
-							printf("Offset %i\n", toc.tracks[i].offset + (lba - toc.tracks[i].start));
-							FileSeek(&toc.tracks[0].f, toc.tracks[i].offset + ((lba - toc.tracks[i].start) * CD_SECTOR_LEN), SEEK_SET);
+							printf("Offset %i\n", toc.tracks[i].offset + (lba - toc.tracks[i].start + toc.tracks[i].pregap));
+							FileSeek(&toc.tracks[0].f, toc.tracks[i].offset + ((lba - toc.tracks[i].start + toc.tracks[i].pregap) * CD_SECTOR_LEN), SEEK_SET);
 						}
 						else
 						{
-							printf("No Offset %i\n", (lba - toc.tracks[i].start));
-							FileSeek(&toc.tracks[i].f, (lba - toc.tracks[i].start) * CD_SECTOR_LEN, SEEK_SET);
+							printf("No Offset %i\n", (lba - toc.tracks[i].start + toc.tracks[i].pregap));
+							FileSeek(&toc.tracks[i].f, (lba - toc.tracks[i].start + toc.tracks[i].pregap) * CD_SECTOR_LEN, SEEK_SET);
 						}
 					}
 
