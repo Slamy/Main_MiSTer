@@ -3164,7 +3164,7 @@ void user_io_poll()
 					unsigned int psx_blksz = cdi_chd_hunksize();
 					if (psx_blksz && psx_blksz <= sizeof(buffer[0])) buf_n = psx_blksz / blksz;
 				}
-				//printf("SD RD (%llu,%d) on %d, WIDE=%d\n", lba, blksz, disk, fio_size);
+				printf("SD RD (%llu,%d) on %d, WIDE=%d\n", lba, blksz, disk, fio_size);
 
 				int done = 0;
 				uint32_t offset;
@@ -3242,6 +3242,7 @@ void user_io_poll()
 				{
 					offset = (lba - buffer_lba[disk]) * blksz;
 					done = 1;
+					printf("Use buffer %llu\n",lba);
 				}
 
 				// data is now stored in buffer. send it to fpga
