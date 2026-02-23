@@ -78,7 +78,7 @@ void profiling_spike_report(uint32_t begin_idx, uint32_t spike_us)
 
 	const uint64_t total_ns = delta_ns(&get_event(s_event_tail - 1)->ts, &get_event(begin_idx)->ts);
 
-	if (total_ns < (spike_us * 1000ULL)) return; // below threshold
+	if (total_ns < (spike_us * 20000ULL)) return; // below threshold
 
 	for (uint32_t idx = begin_idx; idx != s_event_tail; idx++)
 	{

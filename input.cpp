@@ -1249,6 +1249,7 @@ static int set_watch()
 
 static int check_devs()
 {
+	PROFILE_FUNCTION();
 	int result = 0;
 	int length, i = 0;
 	char buffer[BUF_LEN];
@@ -1668,6 +1669,8 @@ static uint32_t mouse_timer = 0;
 static int uinp_fd = -1;
 static int input_uinp_setup()
 {
+	PROFILE_FUNCTION();
+
 	if (uinp_fd <= 0)
 	{
 		struct uinput_user_dev uinp;
@@ -2426,6 +2429,7 @@ static void store_player(int num, int dev)
 
 static void restore_player(int dev)
 {
+	PROFILE_FUNCTION();
 	// do not restore bound devices
 	if (dev != input[dev].bind && !(JOYCON_COMBINED(dev) && JOYCON_LEFT(dev))) return;
 
@@ -2456,6 +2460,8 @@ static void restore_player(int dev)
 // Analog joystick dead zone
 static void setup_deadzone(struct input_event* ev, int dev)
 {
+	PROFILE_FUNCTION();
+
 	// Lightgun/wheel has no dead zone
 	if (ev->type != EV_ABS || (ev->code <= 1 && (input[dev].lightgun || input[dev].quirk == QUIRK_WHEEL)))
 	{
@@ -2567,6 +2573,7 @@ static void assign_player(int dev, int num, int force = 0)
 
 static void input_cb(struct input_event *ev, struct input_absinfo *absinfo, int dev)
 {
+	PROFILE_FUNCTION();
 	if (ev->type != EV_KEY && ev->type != EV_ABS && ev->type != EV_REL) return;
 	if (ev->type == EV_KEY && (!ev->code || ev->code == KEY_UNKNOWN)) return;
 
@@ -3700,6 +3707,7 @@ void make_unique(uint16_t vid, uint16_t pid, int type)
 
 void mergedevs()
 {
+	PROFILE_FUNCTION();
 	for (int i = 0; i < NUMDEV; i++)
 	{
 		memset(input[i].id, 0, sizeof(input[i].id));
@@ -4259,6 +4267,7 @@ static int vcs_proc(int dev, input_event *ev)
 
 void openfire_signal()
 {
+	PROFILE_FUNCTION();
 	for (int i = 0; i < NUMDEV; i++)
 	{
 		if (input[i].vid == 0xf143 && strstr(input[i].name, "OpenFIRE ") &&
@@ -4296,6 +4305,7 @@ void openfire_signal()
 
 void check_joycon()
 {
+	PROFILE_FUNCTION();
 	while (1)
 	{
 		int l = -1, r = -1;
@@ -4544,6 +4554,8 @@ static void set_wheel_range(int dev, int range)
 
 static void setup_wheels()
 {
+	PROFILE_FUNCTION();
+
 	if (cfg.wheel_force > 100) cfg.wheel_force = 100;
 
 	for (int i = 0; i < NUMDEV; i++)
@@ -4721,6 +4733,8 @@ static void setup_wheels()
 
 int input_test(int getchar)
 {
+	PROFILE_FUNCTION();
+
 	static char cur_leds = 0;
 	static int state = 0;
 	struct input_absinfo absinfo;
@@ -4736,6 +4750,7 @@ int input_test(int getchar)
 
 	if (state == 0)
 	{
+		PROFILE_SCOPE("1");
 		input_uinp_setup();
 		memset(pool, -1, sizeof(pool));
 
@@ -4757,6 +4772,8 @@ int input_test(int getchar)
 
 	if (state == 1)
 	{
+		PROFILE_SCOPE("2");
+
 		timeout = 0;
 		printf("Open up to %d input devices.\n", NUMDEV);
 		for (int i = 0; i < NUMDEV; i++)
@@ -5138,7 +5155,7 @@ int input_test(int getchar)
 			setup_wheels();
 			for (int i = 0; i < n; i++)
 			{
-				printf("opened %d(%2d): %s (%04x:%04x:%08x) %d \"%s\" \"%s\"\n", i, input[i].bind, input[i].devname, input[i].vid, input[i].pid, input[i].unique_hash, input[i].quirk, input[i].id, input[i].name);
+				//printf("opened %d(%2d): %s (%04x:%04x:%08x) %d \"%s\" \"%s\"\n", i, input[i].bind, input[i].devname, input[i].vid, input[i].pid, input[i].unique_hash, input[i].quirk, input[i].id, input[i].name);
 				restore_player(i);
 				setup_deadzone(&ev, i);
 			}
@@ -5150,6 +5167,8 @@ int input_test(int getchar)
 
 	if (cfg.bt_auto_disconnect)
 	{
+		PROFILE_SCOPE("bt_auto_disconnect");
+
 		if (!timeout) timeout = GetTimer(6000);
 		else if (CheckTimer(timeout))
 		{
@@ -5178,13 +5197,19 @@ int input_test(int getchar)
 
 	if (state == 2)
 	{
+		PROFILE_SCOPE("state 2");
+
 		int timeout = 0;
 		if (is_menu() && video_fb_state()) timeout = 25;
 
 		while (1)
 		{
+			PROFILE_SCOPE("loop");
+
 			if (cfg.rumble && !is_menu())
 			{
+				PROFILE_SCOPE("state 3");
+
 				for (int i = 0; i < NUMDEV; i++)
 				{
 					if (!input[i].has_rumble) continue;
@@ -5208,6 +5233,8 @@ int input_test(int getchar)
 
 			if ((pool[NUMDEV].revents & POLLIN) && check_devs())
 			{
+				PROFILE_SCOPE("close");
+
 				printf("Close all devices.\n");
 				for (int i = 0; i < NUMDEV; i++) if (pool[i].fd >= 0)
 				{
@@ -5220,6 +5247,8 @@ int input_test(int getchar)
 
 			for (int pos = 0; pos < NUMDEV; pos++)
 			{
+				PROFILE_SCOPE("state 4");
+
 				int i = pos;
 
 
@@ -5791,6 +5820,8 @@ int input_test(int getchar)
 
 			if ((pool[NUMDEV + 1].fd >= 0) && (pool[NUMDEV + 1].revents & POLLIN))
 			{
+				PROFILE_SCOPE("state 4");
+
 				static char cmd[1024];
 				int len = read(pool[NUMDEV + 1].fd, cmd, sizeof(cmd) - 1);
 				if (len)

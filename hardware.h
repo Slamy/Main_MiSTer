@@ -4,7 +4,9 @@
 #include <inttypes.h>
 #include <stdio.h>
 
+/// Value provided as milliseconds
 unsigned long GetTimer(unsigned long offset);
+
 unsigned long CheckTimer(unsigned long t);
 void WaitTimer(unsigned long time);
 
