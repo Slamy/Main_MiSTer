@@ -258,8 +258,6 @@ int cdi_load_cue(const char *filename, toc_t *table)
 				 (sscanf(lptr, "INDEX 1 %02d:%02d:%02d", &mm, &ss, &bb) == 3))
 		{
 			index1 = bb + ss * 75 + mm * 60 * 75;
-			if (!index0)
-				index0 = index1;
 
 			if (!table->tracks[table->last].f.opened())
 			{
