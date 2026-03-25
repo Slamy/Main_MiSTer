@@ -260,6 +260,8 @@ static int load_cue(const char *filename, toc_t *table)
 				 (sscanf(lptr, "INDEX 1 %02d:%02d:%02d", &mm, &ss, &bb) == 3))
 		{
 			index1 = bb + ss * 75 + mm * 60 * 75;
+			if (!index0)
+				index0 = index1;
 
 			if (!table->tracks[table->last].f.opened())
 			{
@@ -789,7 +791,7 @@ void cdi_read_cd(uint8_t *buffer, int lba, int cnt)
 	{
 		if (lba < 0 || !toc.last)
 		{
-			// Probably TOC area
+			// TOC area
 			memset(buffer, 0, CDI_SECTOR_LEN);
 			buffer += CDI_SECTOR_LEN;
 			subcode_data(lba, *reinterpret_cast<struct subcode *>(buffer));
@@ -860,8 +862,6 @@ void cdi_read_cd(uint8_t *buffer, int lba, int cnt)
 			}
 		}
 
-		buffer += CDI_SECTOR_LEN;
-		buffer += sizeof(struct subcode);
 		cnt--;
 		lba++;
 	}
