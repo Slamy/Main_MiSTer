@@ -7917,7 +7917,7 @@ void menu_process_save()
 	menu_save_timer = GetTimer(500);
 }
 
-static char pchar[] = { 0x8C, 0x8E, 0x8F, 0x90, 0x91, 0x7F };
+static uint8_t pchar[] = { 0x8C, 0x8E, 0x8F, 0x90, 0x91, 0x7F };
 
 #define PROGRESS_CNT    28
 #define PROGRESS_CHARS  (int)(sizeof(pchar)/sizeof(pchar[0]))

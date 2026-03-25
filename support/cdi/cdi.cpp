@@ -115,7 +115,6 @@ static void unload_cue(toc_t *table)
 
 static int load_chd(const char *filename, toc_t *table)
 {
-
 	unload_chd(table);
 	chd_error err = mister_load_chd(filename, table);
 	if (err != CHDERR_NONE)
@@ -141,17 +140,17 @@ static int load_chd(const char *filename, toc_t *table)
 	return 1;
 }
 
-static int load_cue(const char *filename, toc_t *table)
+int cdi_load_cue(const char *filename, toc_t *table)
 {
 	static char fname[1024 + 10];
 	static char line[128];
 	char *ptr, *lptr;
 	static char toc[100 * 1024];
+	strcpy(fname, filename);
 
 	unload_cue(table);
 	printf("\x1b[32mCDI: Open CUE: %s\n\x1b[0m", fname);
 
-	strcpy(fname, filename);
 
 	memset(toc, 0, sizeof(toc));
 	if (!FileLoad(fname, toc, sizeof(toc) - 1))
@@ -197,8 +196,7 @@ static int load_cue(const char *filename, toc_t *table)
 			}
 			*ptr = 0;
 
-			if (!FileOpen(&table->tracks[table->last].f, fname))
-				return 0;
+			table->tracks[table->last].f.filp=(FILE*)"x";
 
 			printf("\x1b[32mCDI: Open track file: %s\n\x1b[0m", fname);
 
@@ -288,6 +286,8 @@ static int load_cue(const char *filename, toc_t *table)
 	for (int i = 0; i < table->last; i++)
 	{
 		printf("\x1b[32mCUE: Track = %u, start = %u, end = %u, offset = %d, sector_size=%d, type = %u, pregap = %u\n\x1b[0m", i, table->tracks[i].start, table->tracks[i].end, table->tracks[i].offset, table->tracks[i].sector_size, table->tracks[i].type, table->tracks[i].pregap);
+		table->tracks[i].f.filp = NULL;
+
 	}
 
 	return 1;
@@ -304,10 +304,6 @@ static int load_cd_image(const char *filename, toc_t *table)
 	if (!strncasecmp(".chd", ext, 4))
 	{
 		result = load_chd(filename, table);
-	}
-	else if (!strncasecmp(".cue", ext, 4))
-	{
-		result = load_cue(filename, table);
 	}
 
 	// On a CDI 210/05 the SERVO has to provide the info
