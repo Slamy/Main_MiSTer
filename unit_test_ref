@@ -7,14 +7,14 @@
 [0m[32mCDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 6).bin
 [0m[32mCDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 7).bin
 [0m[32mCDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 8).bin
-[0m[32mCUE: Track = 0, start = 373350, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 1, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 2, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 3, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 4, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 5, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 6, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 7, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 0, start = 186750, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 186600
+[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 2, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 3, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 4, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 5, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 6, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 7, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
 [0m[32mCDI: Open CUE: cues/7th Guest, The (Germany) (Disc 1) (Das Spiel).cue
 [0m[32mCDI: Open track file: cues/7th Guest, The (Germany) (Disc 1) (Das Spiel).bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
@@ -39,8 +39,8 @@
 [0m[32mCDI: Open CUE: cues/Alien Gate (USA).cue
 [0m[32mCDI: Open track file: cues/Alien Gate (USA) (Track 1).bin
 [0m[32mCDI: Open track file: cues/Alien Gate (USA) (Track 2).bin
-[0m[32mCUE: Track = 0, start = 15640, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 1, start = 500, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 0, start = 7895, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 7745
+[0m[32mCUE: Track = 1, start = 325, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 175
 [0m[32mCDI: Open CUE: cues/Apprentice_USA_multi.cue
 [0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 01).bin
 [0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 02).bin
@@ -64,31 +64,31 @@
 [0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 20).bin
 [0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 21).bin
 [0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 22).bin
-[0m[32mCUE: Track = 0, start = 138450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 1, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 2, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 3, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 4, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 5, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 6, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 7, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 8, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 9, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 10, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 11, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 12, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 13, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 14, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 15, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 16, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 17, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 18, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 19, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 20, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 21, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 0, start = 69300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 69150
+[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 2, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 3, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 4, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 5, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 6, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 7, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 8, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 9, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 10, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 11, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 12, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 13, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 14, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 15, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 16, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 17, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 18, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 19, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 20, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 21, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
 [0m[32mCDI: Open CUE: cues/Apprentice_USA_single.cue
 [0m[32mCDI: Open track file: cues/Apprentice_USA_single.bin
-[0m[32mCUE: Track = 0, start = 138450, end = 88799, offset = 0, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 0, start = 69300, end = 88799, offset = 0, sector_size=2352, type = 0, pregap = 69150
 [0m[32mCUE: Track = 1, start = 88950, end = 107624, offset = 208504800, sector_size=2352, type = 0, pregap = 150
 [0m[32mCUE: Track = 2, start = 107775, end = 112199, offset = 252781200, sector_size=2352, type = 0, pregap = 150
 [0m[32mCUE: Track = 3, start = 112350, end = 133649, offset = 263541600, sector_size=2352, type = 0, pregap = 150
@@ -173,8 +173,8 @@
 [0m[32mCDI: Open CUE: cues/Diamant Frituurtest (Netherlands).cue
 [0m[32mCDI: Open track file: cues/Diamant Frituurtest (Netherlands) (Track 1).bin
 [0m[32mCDI: Open track file: cues/Diamant Frituurtest (Netherlands) (Track 2).bin
-[0m[32mCUE: Track = 0, start = 160, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 0, start = 155, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 5
+[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
 [0m[32mCDI: Open CUE: cues/Dragon_s_Lair_US.cue
 [0m[32mCDI: Open track file: cues/Dragon_s_Lair_US.bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
@@ -191,7 +191,7 @@
 [0m[32mCDI: Open track file: cues/Flowers of Robert Mapplethorpe, The (USA) (Track 1).bin
 [0m[32mCDI: Open track file: cues/Flowers of Robert Mapplethorpe, The (USA) (Track 2).bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
 [0m[32mCDI: Open CUE: cues/Follow Your Dreams (Germany).cue
 [0m[32mCDI: Open track file: cues/Follow Your Dreams (Germany) (Track 1).bin
 [0m[32mCDI: Open track file: cues/Follow Your Dreams (Germany) (Track 2).bin
@@ -200,7 +200,7 @@
 [0m[32mCDI: Open track file: cues/Follow Your Dreams (Germany) (Track 5).bin
 [0m[32mCDI: Open track file: cues/Follow Your Dreams (Germany) (Track 6).bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
 [0m[32mCUE: Track = 2, start = 150, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
 [0m[32mCUE: Track = 3, start = 150, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
 [0m[32mCUE: Track = 4, start = 150, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
@@ -216,8 +216,8 @@
 [0m[32mCDI: Open track file: cues/God Streams (Japan) (Track 2).bin
 [0m[32mCDI: Open track file: cues/God Streams (Japan) (Track 3).bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 450, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 2, start = 600, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
+[0m[32mCUE: Track = 2, start = 375, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 225
 [0m[32mCDI: Open CUE: cues/Golf My Way (USA) (Disc 1).cue
 [0m[32mCDI: Open track file: cues/Golf My Way (USA) (Disc 1).bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
@@ -268,7 +268,7 @@
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
 [0m[32mCDI: Open CUE: cues/LuckyLuke.cue
 [0m[32mCDI: Open track file: cues/LuckyLuke.bin
-[0m[32mCUE: Track = 0, start = 201000, end = 113999, offset = 0, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 0, start = 100575, end = 113999, offset = 0, sector_size=2352, type = 0, pregap = 100425
 [0m[32mCUE: Track = 1, start = 114150, end = 130649, offset = 267775200, sector_size=2352, type = 0, pregap = 150
 [0m[32mCUE: Track = 2, start = 130800, end = 144974, offset = 306936000, sector_size=2352, type = 0, pregap = 150
 [0m[32mCUE: Track = 3, start = 145125, end = 160949, offset = 340628400, sector_size=2352, type = 0, pregap = 150
@@ -336,8 +336,8 @@
 [0m[32mCDI: Open track file: cues/Photo CD Gravure - Art Arts Series - HinoSelf - Terumasa Hino (Japan) (Track 2).bin
 [0m[32mCDI: Open track file: cues/Photo CD Gravure - Art Arts Series - HinoSelf - Terumasa Hino (Japan) (Track 3).bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 450, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 2, start = 600, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
+[0m[32mCUE: Track = 2, start = 375, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 225
 [0m[32mCDI: Open CUE: cues/Photo CD Sample Disc (USA).cue
 [0m[32mCDI: Open track file: cues/Photo CD Sample Disc (USA).bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
@@ -365,31 +365,31 @@
 [0m[32mCDI: Open track file: cues/Robocop (USA) (Disc 2) (Track 1).bin
 [0m[32mCDI: Open track file: cues/Robocop (USA) (Disc 2) (Track 2).bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 450, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
 [0m[32mCDI: Open CUE: cues/Schtroumpfs, Les - Le Teleportaschtroumpf (France).cue
 [0m[32mCDI: Open track file: cues/Schtroumpfs, Les - Le Teleportaschtroumpf (France).bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
 [0m[32mCDI: Open CUE: cues/Snatcher.cue
 [0m[32mCDI: Open track file: cues/Snatcher.bin
-[0m[32mCUE: Track = 0, start = 150, end = 18439, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 1, start = 18440, end = 35336, offset = 43018080, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 2, start = 35337, end = 45536, offset = 82759824, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 3, start = 45537, end = 46724, offset = 106750224, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 4, start = 46725, end = 55044, offset = 109544400, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 5, start = 55045, end = 65671, offset = 129113040, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 6, start = 65672, end = 72604, offset = 154107744, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 7, start = 72605, end = 79114, offset = 170414160, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 8, start = 79115, end = 83351, offset = 185725680, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 9, start = 83352, end = 95989, offset = 195691104, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 10, start = 95990, end = 104801, offset = 225415680, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 11, start = 104802, end = 112656, offset = 246141504, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 12, start = 112657, end = 118266, offset = 264616464, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 13, start = 118267, end = 136171, offset = 277811184, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 14, start = 136172, end = 146579, offset = 319923744, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 15, start = 146580, end = 162714, offset = 344403360, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 16, start = 162715, end = 176286, offset = 382352880, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 17, start = 176287, end = 185169, offset = 414274224, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 18, start = 185170, end = 149, offset = 435167040, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 1, start = 18440, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 18290
+[0m[32mCUE: Track = 2, start = 35337, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 35187
+[0m[32mCUE: Track = 3, start = 45537, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 45387
+[0m[32mCUE: Track = 4, start = 46725, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 46575
+[0m[32mCUE: Track = 5, start = 55045, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 54895
+[0m[32mCUE: Track = 6, start = 65672, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 65522
+[0m[32mCUE: Track = 7, start = 72605, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 72455
+[0m[32mCUE: Track = 8, start = 79115, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 78965
+[0m[32mCUE: Track = 9, start = 83352, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 83202
+[0m[32mCUE: Track = 10, start = 95990, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 95840
+[0m[32mCUE: Track = 11, start = 104802, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 104652
+[0m[32mCUE: Track = 12, start = 112657, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 112507
+[0m[32mCUE: Track = 13, start = 118267, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 118117
+[0m[32mCUE: Track = 14, start = 136172, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 136022
+[0m[32mCUE: Track = 15, start = 146580, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 146430
+[0m[32mCUE: Track = 16, start = 162715, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 162565
+[0m[32mCUE: Track = 17, start = 176287, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 176137
+[0m[32mCUE: Track = 18, start = 185170, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 185020
 [0m[32mCDI: Open CUE: cues/Space Ace (Europe).cue
 [0m[32mCDI: Open track file: cues/Space Ace (Europe).bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
@@ -401,8 +401,8 @@
 [0m[32mCDI: Open track file: cues/Star-Wars-Episode-IV-A-New-Hope-Disc-1 (Track 2).bin
 [0m[32mCDI: Open track file: cues/Star-Wars-Episode-IV-A-New-Hope-Disc-1 (Track 3).bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 450, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 2, start = 450, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
+[0m[32mCUE: Track = 2, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
 [0m[32mCDI: Open CUE: cues/Terminator 2 - Judgment Day (USA) (Disc 1).cue
 [0m[32mCDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 1) (Track 1).bin
 [0m[32mCDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 1) (Track 2).bin
@@ -410,15 +410,15 @@
 [0m[32mCDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 1) (Track 4).bin
 [0m[32mCDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 1) (Track 5).bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 450, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 2, start = 450, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 3, start = 450, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 4, start = 450, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
+[0m[32mCUE: Track = 2, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
+[0m[32mCUE: Track = 3, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
+[0m[32mCUE: Track = 4, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
 [0m[32mCDI: Open CUE: cues/Terminator 2 - Judgment Day (USA) (Disc 2).cue
 [0m[32mCDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 2) (Track 1).bin
 [0m[32mCDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 2) (Track 2).bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 450, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
 [0m[32mCDI: Open CUE: cues/Tetris (USA, Europe).cue
 [0m[32mCDI: Open track file: cues/Tetris (USA, Europe).bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
@@ -439,8 +439,8 @@
 [0m[32mCDI: Open track file: cues/Validation Disc (Japan) (Disc 2) (Track 2).bin
 [0m[32mCDI: Open track file: cues/Validation Disc (Japan) (Disc 2) (Track 3).bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 450, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 2, start = 476, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+[0m[32mCUE: Track = 2, start = 313, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 163
 [0m[32mCDI: Open CUE: cues/Who Shot Johnny Rock (Europe).cue
 [0m[32mCDI: Open track file: cues/Who Shot Johnny Rock (Europe).bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
