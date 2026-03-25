@@ -2,6 +2,7 @@
 #include <cassert>
 #include <functional>
 #include <memory>
+#include <array>
 
 
 /// Helper class to read .cdg files, containing CD+G data

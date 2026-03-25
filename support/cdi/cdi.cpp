@@ -174,7 +174,7 @@ static int load_chd(const char* filename, toc_t* table)
 	return 1;
 }
 
-static int load_cue(const char* filename, toc_t* table)
+int cdi_load_cue(const char* filename, toc_t* table)
 {
 	static char fname[1024 + 10];
 	static char line[128];
@@ -192,9 +192,10 @@ static int load_cue(const char* filename, toc_t* table)
 		return 0;
 	}
 
+#if 0
 	// Try to open a CloneCD type subcode file
 	memcpy(&fname[strlen(fname) - 4], ".sub", 4);
-	if (FileOpen(&toc.sub, getFullPath(fname)))
+	if (FileOpen(&toc.sub, getFullPath(fname)), 1)
 	{
 		printf("\x1b[32mCDI: Using .sub file for subchannel RW: %s\n\x1b[0m", fname);
 		sub_loaded_from_cdg = false;
@@ -202,12 +203,13 @@ static int load_cue(const char* filename, toc_t* table)
 	else
 	{
 		memcpy(&fname[strlen(fname) - 4], ".cdg", 4);
-		if (FileOpen(&toc.sub, getFullPath(fname)))
+		if (FileOpen(&toc.sub, getFullPath(fname)),1)
 		{
 			printf("\x1b[32mCDI: Using .cdg file for subchannel RW: %s\n\x1b[0m", fname);
 			sub_loaded_from_cdg = true;
 		}
 	}
+#endif
 
 	int mm, ss, bb;
 	int index0 = 0;
@@ -246,8 +248,7 @@ static int load_cue(const char* filename, toc_t* table)
 			}
 			*ptr = 0;
 
-			if (!FileOpen(&table->tracks[table->last].f, fname))
-				return 0;
+			table->tracks[table->last].f.filp = (FILE*)"x";
 
 			printf("\x1b[32mCDI: Open track file: %s\n\x1b[0m", fname);
 
@@ -348,6 +349,7 @@ static int load_cue(const char* filename, toc_t* table)
 			   table->tracks[i].sector_size,
 			   table->tracks[i].type,
 			   table->tracks[i].pregap);
+		table->tracks[i].f.filp = NULL;
 	}
 
 	return 1;
@@ -367,7 +369,7 @@ static int load_cd_image(const char* filename, toc_t* table)
 	}
 	else if (!strncasecmp(".cue", ext, 4))
 	{
-		result = load_cue(filename, table);
+		result = cdi_load_cue(filename, table);
 	}
 
 	// On a CDI 210/05 the SERVO has to provide the info

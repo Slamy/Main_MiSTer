@@ -34,61 +34,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "scheduler.h"
 #include "osd.h"
 #include "offload.h"
+#include "cd.h"
+#include <glob.h>
+#include <string>
+#include <assert.h>
+
 
 const char *version = "$VER:" VDATE;
 
+toc_t table;
+int cdi_load_cue(const char *filename, toc_t *table);
+
 int main(int argc, char *argv[])
 {
-	// Always pin main worker process to core #1 as core #0 is the
-	// hardware interrupt handler in Linux.  This reduces idle latency
-	// in the main loop by about 6-7x.
-	cpu_set_t set;
-	CPU_ZERO(&set);
-	CPU_SET(1, &set);
-	sched_setaffinity(0, sizeof(set), &set);
+	glob_t glob_result;
+    memset(&glob_result, 0, sizeof(glob_result));
 
-	offload_start();
+	glob("cues/*.cue", GLOB_TILDE, NULL, &glob_result);
 
-	fpga_io_init();
-
-	DISKLED_OFF;
-
-	printf("\nMinimig by Dennis van Weeren");
-	printf("\nARM Controller by Jakub Bednarski");
-	printf("\nMiSTer code by Sorgelig\n\n");
-
-	printf("Version %s\n\n", version + 5);
-
-	if (argc > 1) printf("Core path: %s\n", argv[1]);
-	if (argc > 2) printf("XML path: %s\n", argv[2]);
-
-	if (!is_fpga_ready(1))
-	{
-		printf("\nGPI[31]==1. FPGA is uninitialized or incompatible core loaded.\n");
-		printf("Quitting. Bye bye...\n");
-		exit(0);
+    for (size_t i = 0; i < glob_result.gl_pathc; ++i) {
+		auto filename = std::string(glob_result.gl_pathv[i]);
+		assert(cdi_load_cue(filename.c_str(), &table)==1);
 	}
-
-	FindStorage();
-	user_io_init((argc > 1) ? argv[1] : "",(argc > 2) ? argv[2] : NULL);
-
-#ifdef USE_SCHEDULER
-	scheduler_init();
-	scheduler_run();
-#else
-	while (1)
-	{
-		if (!is_fpga_ready(1))
-		{
-			fpga_wait_to_reset();
-		}
-
-		user_io_poll();
-		frame_timer();
-		input_poll(0);
-		HandleUI();
-		OsdUpdate();
-	}
-#endif
-	return 0;
 }

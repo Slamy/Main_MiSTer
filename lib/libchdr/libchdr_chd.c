@@ -372,7 +372,7 @@ static chd_error metadata_find_entry(chd_file *chd, UINT32 metatag, UINT32 metai
 static chd_error zlib_codec_init(void *codec, uint32_t hunkbytes);
 static void zlib_codec_free(void *codec);
 static chd_error zlib_codec_decompress(void *codec, const uint8_t *src, uint32_t complen, uint8_t *dest, uint32_t destlen);
-static voidpf zlib_fast_alloc(voidpf opaque, uInt items, uInt size);
+static voidpf zlib_fast_alloc(voidpf opaque, size_t items, size_t size);
 static void zlib_fast_free(voidpf opaque, voidpf address);
 static void zlib_allocator_free(voidpf opaque);
 
@@ -3134,7 +3134,7 @@ static chd_error zlib_codec_decompress(void *codec, const uint8_t *src, uint32_t
 #define ZLIB_MIN_ALIGNMENT_BITS 512
 #define ZLIB_MIN_ALIGNMENT_BYTES (ZLIB_MIN_ALIGNMENT_BITS / 8)
 
-static voidpf zlib_fast_alloc(voidpf opaque, uInt items, uInt size)
+static voidpf zlib_fast_alloc(voidpf opaque, size_t items, size_t size)
 {
 	zlib_allocator *alloc = (zlib_allocator *)opaque;
 	uintptr_t paddr = 0;
