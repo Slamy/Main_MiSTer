@@ -371,25 +371,25 @@
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
 [0m[32mCDI: Open CUE: cues/Snatcher.cue
 [0m[32mCDI: Open track file: cues/Snatcher.bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 1, start = 18440, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 18290
-[0m[32mCUE: Track = 2, start = 35337, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 35187
-[0m[32mCUE: Track = 3, start = 45537, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 45387
-[0m[32mCUE: Track = 4, start = 46725, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 46575
-[0m[32mCUE: Track = 5, start = 55045, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 54895
-[0m[32mCUE: Track = 6, start = 65672, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 65522
-[0m[32mCUE: Track = 7, start = 72605, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 72455
-[0m[32mCUE: Track = 8, start = 79115, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 78965
-[0m[32mCUE: Track = 9, start = 83352, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 83202
-[0m[32mCUE: Track = 10, start = 95990, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 95840
-[0m[32mCUE: Track = 11, start = 104802, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 104652
-[0m[32mCUE: Track = 12, start = 112657, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 112507
-[0m[32mCUE: Track = 13, start = 118267, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 118117
-[0m[32mCUE: Track = 14, start = 136172, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 136022
-[0m[32mCUE: Track = 15, start = 146580, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 146430
-[0m[32mCUE: Track = 16, start = 162715, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 162565
-[0m[32mCUE: Track = 17, start = 176287, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 176137
-[0m[32mCUE: Track = 18, start = 185170, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 185020
+[0m[32mCUE: Track = 0, start = 150, end = 18439, offset = 0, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 1, start = 18440, end = 35336, offset = 43018080, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 2, start = 35337, end = 45536, offset = 82759824, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 3, start = 45537, end = 46724, offset = 106750224, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 4, start = 46725, end = 55044, offset = 109544400, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 5, start = 55045, end = 65671, offset = 129113040, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 6, start = 65672, end = 72604, offset = 154107744, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 7, start = 72605, end = 79114, offset = 170414160, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 8, start = 79115, end = 83351, offset = 185725680, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 9, start = 83352, end = 95989, offset = 195691104, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 10, start = 95990, end = 104801, offset = 225415680, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 11, start = 104802, end = 112656, offset = 246141504, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 12, start = 112657, end = 118266, offset = 264616464, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 13, start = 118267, end = 136171, offset = 277811184, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 14, start = 136172, end = 146579, offset = 319923744, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 15, start = 146580, end = 162714, offset = 344403360, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 16, start = 162715, end = 176286, offset = 382352880, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 17, start = 176287, end = 185169, offset = 414274224, sector_size=2352, type = 0, pregap = 0
+[0m[32mCUE: Track = 18, start = 185170, end = 149, offset = 435167040, sector_size=2352, type = 0, pregap = 0
 [0m[32mCDI: Open CUE: cues/Space Ace (Europe).cue
 [0m[32mCDI: Open track file: cues/Space Ace (Europe).bin
 [0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0

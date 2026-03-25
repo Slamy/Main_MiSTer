@@ -151,7 +151,6 @@ int cdi_load_cue(const char *filename, toc_t *table)
 	unload_cue(table);
 	printf("\x1b[32mCDI: Open CUE: %s\n\x1b[0m", fname);
 
-
 	memset(toc, 0, sizeof(toc));
 	if (!FileLoad(fname, toc, sizeof(toc) - 1))
 	{
@@ -196,7 +195,7 @@ int cdi_load_cue(const char *filename, toc_t *table)
 			}
 			*ptr = 0;
 
-			table->tracks[table->last].f.filp=(FILE*)"x";
+			table->tracks[table->last].f.filp = (FILE *)"x";
 
 			printf("\x1b[32mCDI: Open track file: %s\n\x1b[0m", fname);
 
@@ -261,6 +260,9 @@ int cdi_load_cue(const char *filename, toc_t *table)
 
 			if (!table->tracks[table->last].f.opened())
 			{
+				if (!index0)
+					index0 = index1;
+
 				table->tracks[table->last].start = index1 + 150;
 				table->tracks[table->last].pregap = index1 - index0;
 				// Subtract the fake 150 sector pregap used for the first data track
@@ -285,7 +287,6 @@ int cdi_load_cue(const char *filename, toc_t *table)
 	{
 		printf("\x1b[32mCUE: Track = %u, start = %u, end = %u, offset = %d, sector_size=%d, type = %u, pregap = %u\n\x1b[0m", i, table->tracks[i].start, table->tracks[i].end, table->tracks[i].offset, table->tracks[i].sector_size, table->tracks[i].type, table->tracks[i].pregap);
 		table->tracks[i].f.filp = NULL;
-
 	}
 
 	return 1;
