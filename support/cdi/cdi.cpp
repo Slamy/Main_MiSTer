@@ -216,6 +216,8 @@ int cdi_load_cue(const char* filename, toc_t* table)
 	int index1 = 0;
 
 	char* buf = cue;
+	int pregap = 0;
+
 	while (sgets(line, sizeof(line), &buf))
 	{
 		lptr = line;
@@ -250,14 +252,14 @@ int cdi_load_cue(const char* filename, toc_t* table)
 
 			table->tracks[table->last].f.filp = (FILE*)"x";
 
-			printf("\x1b[32mCDI: Open track file: %s\n\x1b[0m", fname);
+			printf("\x1b[32mPSX: Open track file: %s\n\x1b[0m", fname);
 
 			table->tracks[table->last].offset = 0;
 
 			if (!strstr(lptr, "BINARY"))
 			{
 				FileClose(&table->tracks[table->last].f);
-				printf("\x1b[32mCDI: unsupported file: %s\n\x1b[0m", fname);
+				printf("\x1b[32mPSX: unsupported file: %s\n\x1b[0m", fname);
 				return 0;
 			}
 		}
@@ -265,37 +267,39 @@ int cdi_load_cue(const char* filename, toc_t* table)
 		/* decode PREGAP commands */
 		else if (sscanf(lptr, "PREGAP %02d:%02d:%02d", &mm, &ss, &bb) == 3)
 		{
-			// TODO Find an example image
+			// Single bin specific, add pregab but subtract inherent pregap
+			pregap += bb + ss * 75 + mm * 60 * 75;
+			table->tracks[table->last].pregap = 1;
 		}
 		/* decode TRACK commands */
 		else if ((sscanf(lptr, "TRACK %02d %*s", &bb)) || (sscanf(lptr, "TRACK %d %*s", &bb)))
 		{
-			index0 = 0;
+			pregap = 0;
 			if (bb != (table->last + 1))
 			{
 				FileClose(&table->tracks[table->last].f);
-				printf("\x1b[32mCDI: missing tracks: %s\n\x1b[0m", fname);
+				printf("\x1b[32mPSX: missing tracks: %s\n\x1b[0m", fname);
 				return 0;
 			}
-			bool mode1{strstr(lptr, "MODE1/2352") != nullptr};
-			bool mode2{strstr(lptr, "MODE2/2352") != nullptr};
-			bool modecdi{strstr(lptr, "CDI/2352") != nullptr};
-			bool audio{strstr(lptr, "AUDIO") != nullptr};
 
-			table->tracks[table->last].sector_size = CDI_SECTOR_LEN;
-			if (!table->last)
-				table->end = 150; // implicit 2 seconds pregap for track 1
-
-			if (mode1)
+			if (strstr(lptr, "MODE1/2352") || strstr(lptr, "MODE2/2352") || strstr(lptr, "CDI/2352"))
+			{
+				table->tracks[table->last].sector_size = 2352;
 				table->tracks[table->last].type = TT_MODE1;
-			else if (mode2 || modecdi)
-				table->tracks[table->last].type = TT_MODE2;
-			else if (audio)
+				if (!table->last)
+					table->end = 150; // implicit 2 seconds pregap for track 1
+			}
+			else if (strstr(lptr, "AUDIO"))
+			{
+				table->tracks[table->last].sector_size = 2352;
 				table->tracks[table->last].type = TT_CDDA;
+				if (!table->last)
+					table->end = 150; // audio disc
+			}
 			else
 			{
 				FileClose(&table->tracks[table->last].f);
-				printf("\x1b[32mCDI: unsupported track type: %s\n\x1b[0m", lptr);
+				printf("\x1b[32mPSX: unsupported track type: %s\n\x1b[0m", lptr);
 				return 0;
 			}
 		}
@@ -304,30 +308,53 @@ int cdi_load_cue(const char* filename, toc_t* table)
 		else if ((sscanf(lptr, "INDEX 00 %02d:%02d:%02d", &mm, &ss, &bb) == 3) ||
 				 (sscanf(lptr, "INDEX 0 %02d:%02d:%02d", &mm, &ss, &bb) == 3))
 		{
-			index0 = bb + ss * 75 + mm * 60 * 75;
+			// Single bin specific
+			if (!table->tracks[table->last].f.opened())
+			{
+				pregap = bb + ss * 75 + mm * 60 * 75;
+			}
 		}
 		else if ((sscanf(lptr, "INDEX 01 %02d:%02d:%02d", &mm, &ss, &bb) == 3) ||
 				 (sscanf(lptr, "INDEX 1 %02d:%02d:%02d", &mm, &ss, &bb) == 3))
 		{
-			index1 = bb + ss * 75 + mm * 60 * 75;
-
 			if (!table->tracks[table->last].f.opened())
 			{
-				// Catch absent INDEX0 (no pregap) to fix calculations afterwards
-				if (!index0)
-					index0 = index1;
-
-				table->tracks[table->last].start = index1 + 150;
-				table->tracks[table->last].pregap = index1 - index0;
+				table->tracks[table->last].start = bb + ss * 75 + mm * 60 * 75;
+				if (table->tracks[table->last].pregap)
+					table->tracks[table->last].start += pregap;
 				// Subtract the fake 150 sector pregap used for the first data track
-				table->tracks[table->last].offset = index0 * table->tracks[table->last].sector_size;
-				table->tracks[table->last - 1].end =
-					table->tracks[table->last].start - 1 - table->tracks[table->last].pregap;
+				table->tracks[table->last].offset =
+					table->tracks[table->last].start * table->tracks[table->last].sector_size;
+				if (table->last)
+				{
+					table->tracks[table->last - 1].end = table->tracks[table->last].start - 1;
+					if (pregap)
+					{
+						table->tracks[table->last].indexes[1] = table->tracks[table->last].start - pregap;
+						if (!table->tracks[table->last].pregap)
+						{
+							table->tracks[table->last].offset -= 2352 * table->tracks[table->last].indexes[1];
+							table->tracks[table->last].indexes[1] = table->tracks[table->last].start - pregap;
+						}
+						else
+						{
+							table->tracks[table->last].indexes[1] = pregap;
+						}
+					}
+				}
+				else
+				{
+					// First track always fakes the 150 sector pregap (audio or data)
+					table->tracks[table->last].indexes[1] = 150;
+				}
 			}
 			else
 			{
-				table->tracks[table->last].start = table->end + index0 + index1;
-				table->tracks[table->last].pregap = index1 - index0;
+				table->tracks[table->last].indexes[1] = bb + ss * 75 + mm * 60 * 75;
+				if (!table->last)
+					table->tracks[table->last].indexes[1] =
+						150; // first track (audio or data) fakes the 150 sector pregap
+				table->tracks[table->last].start = table->end;
 				table->end += (table->tracks[table->last].f.size / table->tracks[table->last].sector_size);
 				table->tracks[table->last].offset = 0;
 			}
