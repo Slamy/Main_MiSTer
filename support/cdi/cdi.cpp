@@ -249,7 +249,8 @@ int cdi_load_cue(const char* filename, toc_t* table)
 			*ptr = 0;
 
 			table->tracks[table->last].f.filp = (FILE*)"x";
-
+		    printf ("open state %d\n",table->tracks[table->last].f.opened());
+		    
 			printf("CDI: Open track file: %s\n", fname);
 
 			table->tracks[table->last].offset = 0;
@@ -284,7 +285,10 @@ int cdi_load_cue(const char* filename, toc_t* table)
 
 			table->tracks[table->last].sector_size = CDI_SECTOR_LEN;
 			if (!table->last)
+			{
+				printf("Path C\n");
 				table->end = 150; // implicit 2 seconds pregap for track 1
+			}
 
 			if (mode1)
 				table->tracks[table->last].type = TT_MODE1;
@@ -313,6 +317,7 @@ int cdi_load_cue(const char* filename, toc_t* table)
 
 			if (!table->tracks[table->last].f.opened())
 			{
+				printf("Path A\n");
 				// Catch absent INDEX0 (no pregap) to fix calculations afterwards
 				if (!index0)
 					index0 = index1;
@@ -326,12 +331,16 @@ int cdi_load_cue(const char* filename, toc_t* table)
 			}
 			else
 			{
+				printf("Path B\n");
 				table->tracks[table->last].start = table->end + index0 + index1;
 				table->tracks[table->last].pregap = index1 - index0;
 				table->end += (table->tracks[table->last].f.size / table->tracks[table->last].sector_size);
 				table->tracks[table->last].offset = 0;
 			}
+			printf("Path D %d %d\n",table->tracks[table->last].end, table->end - 1);
+
 			table->tracks[table->last].end = table->end - 1;
+
 			table->last++;
 			if (table->last >= 99)
 				break;

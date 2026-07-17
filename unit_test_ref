@@ -553,14 +553,14 @@ CDI: Open track file: cues/Audio-CD-swap.bin
 CUE: Track = 0, start = 150, end = 15635, offset = 0, sector_size=2352, type = 0, pregap = 0
 CUE: Track = 1, start = 15645, end = 31763, offset = 36423072, sector_size=2352, type = 0, pregap = 9
 CUE: Track = 2, start = 31785, end = 54931, offset = 74356128, sector_size=2352, type = 0, pregap = 21
-CUE: Track = 3, start = 54947, end = 149, offset = 128847264, sector_size=2352, type = 0, pregap = 15
+CUE: Track = 3, start = 54947, end = 70339, offset = 128847264, sector_size=2352, type = 0, pregap = 15
 TOC Entry 01 01 00 02 00
 TOC Entry 01 02 03 28 45
 TOC Entry 01 03 07 03 60
 TOC Entry 01 04 12 12 47
 TOC Entry 01 a0 01 00 00
 TOC Entry 01 a1 04 00 00
-TOC Entry 01 a2 00 02 00
+TOC Entry 01 a2 15 37 65
 CDI: Open CUE: cues/Last Bounty Hunter, The (Europe).cue
 CDI: Open track file: cues/Last Bounty Hunter, The (Europe).bin
 CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
