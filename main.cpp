@@ -39,6 +39,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <string>
 #include <assert.h>
 
+/*
+Keep in mind that (table->tracks[table->last].f.size is missing!
+table->end will have wrong values compared to running on the MiSTer
+*/
 
 const char *version = "$VER:" VDATE;
 
@@ -51,7 +55,7 @@ int main(int argc, char *argv[])
 	glob_t glob_result;
     memset(&glob_result, 0, sizeof(glob_result));
 
-	glob("cues/Lach*.cue", GLOB_TILDE, NULL, &glob_result);
+	glob("cues/*.cue", GLOB_TILDE, NULL, &glob_result);
 
     for (size_t i = 0; i < glob_result.gl_pathc; ++i) {
 		auto filename = std::string(glob_result.gl_pathv[i]);

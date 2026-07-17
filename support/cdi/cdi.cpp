@@ -160,10 +160,7 @@ static int load_chd(const char* filename, toc_t* table)
 			   table->tracks[i].sector_size,
 			   table->tracks[i].type,
 			   table->tracks[i].pregap);
-		printf("CHD: Track = %u, Index %u %u seconds\n",
-			   i,
-			   table->tracks[i].indexes[0],
-			   table->tracks[i].indexes[1]);
+		printf("CHD: Track = %u, Index %u %u seconds\n", i, table->tracks[i].indexes[0], table->tracks[i].indexes[1]);
 	}
 
 	table->end += 150;
@@ -173,6 +170,40 @@ static int load_chd(const char* filename, toc_t* table)
 
 	return 1;
 }
+
+struct
+{
+	int size;
+	const char* filename;
+} bin_sizes[] = {
+	{38161200, "INXS - Listen Like Thieves (USA) (Track 01).bin"},
+	{39885216, "INXS - Listen Like Thieves (USA) (Track 02).bin"},
+	{41606880, "INXS - Listen Like Thieves (USA) (Track 03).bin"},
+	{33015024, "INXS - Listen Like Thieves (USA) (Track 04).bin"},
+	{29106000, "INXS - Listen Like Thieves (USA) (Track 05).bin"},
+	{30089136, "INXS - Listen Like Thieves (USA) (Track 06).bin"},
+	{33591264, "INXS - Listen Like Thieves (USA) (Track 07).bin"},
+	{26043696, "INXS - Listen Like Thieves (USA) (Track 08).bin"},
+	{52630704, "INXS - Listen Like Thieves (USA) (Track 09).bin"},
+	{32876256, "INXS - Listen Like Thieves (USA) (Track 10).bin"},
+	{37413264, "INXS - Listen Like Thieves (USA) (Track 11).bin"},
+	{37413264, "INXS - Listen Like Thieves (USA) (Track 11).bin"},
+	{165086880, "LachIschOdaWas.bin"},
+};
+
+int LookupSize(const char* name)
+{
+	int size = 0;
+	for (int i = 0; i < ARRAY_LENGTH(bin_sizes); i++)
+	{
+		if (strstr(name, bin_sizes[i].filename))
+		{
+			size = bin_sizes[i].size;
+		}
+	}
+	//printf("Size %s %d\n", name, size);
+	return size;
+};
 
 int cdi_load_cue(const char* filename, toc_t* table)
 {
@@ -249,8 +280,10 @@ int cdi_load_cue(const char* filename, toc_t* table)
 			*ptr = 0;
 
 			table->tracks[table->last].f.filp = (FILE*)"x";
-		    printf ("open state %d\n",table->tracks[table->last].f.opened());
-		    
+			table->tracks[table->last].f.size = LookupSize(fname);
+
+			//printf("open state %d\n", table->tracks[table->last].f.opened());
+
 			printf("CDI: Open track file: %s\n", fname);
 
 			table->tracks[table->last].offset = 0;
@@ -286,7 +319,7 @@ int cdi_load_cue(const char* filename, toc_t* table)
 			table->tracks[table->last].sector_size = CDI_SECTOR_LEN;
 			if (!table->last)
 			{
-				printf("Path C\n");
+				//printf("Path C\n");
 				table->end = 150; // implicit 2 seconds pregap for track 1
 			}
 
@@ -317,7 +350,7 @@ int cdi_load_cue(const char* filename, toc_t* table)
 
 			if (!table->tracks[table->last].f.opened())
 			{
-				printf("Path A\n");
+				//printf("Path A\n");
 				// Catch absent INDEX0 (no pregap) to fix calculations afterwards
 				if (!index0)
 					index0 = index1;
@@ -331,13 +364,13 @@ int cdi_load_cue(const char* filename, toc_t* table)
 			}
 			else
 			{
-				printf("Path B\n");
+				//printf("Path B\n");
 				table->tracks[table->last].start = table->end + index0 + index1;
 				table->tracks[table->last].pregap = index1 - index0;
 				table->end += (table->tracks[table->last].f.size / table->tracks[table->last].sector_size);
 				table->tracks[table->last].offset = 0;
 			}
-			printf("Path D %d %d\n",table->tracks[table->last].end, table->end - 1);
+			//printf("Path D %d %d\n", table->tracks[table->last].end, table->end - 1);
 
 			table->tracks[table->last].end = table->end - 1;
 
