@@ -44,6 +44,7 @@ const char *version = "$VER:" VDATE;
 
 toc_t table;
 int cdi_load_cue(const char *filename, toc_t *table);
+void prepare_toc_buffer(toc_t* toc);
 
 int main(int argc, char *argv[])
 {
@@ -55,5 +56,6 @@ int main(int argc, char *argv[])
     for (size_t i = 0; i < glob_result.gl_pathc; ++i) {
 		auto filename = std::string(glob_result.gl_pathv[i]);
 		assert(cdi_load_cue(filename.c_str(), &table)==1);
+		prepare_toc_buffer(&table);
 	}
 }

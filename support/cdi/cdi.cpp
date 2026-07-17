@@ -151,8 +151,8 @@ static int load_chd(const char* filename, toc_t* table)
 		table->tracks[i].start += 150;
 		table->tracks[i].end += 150;
 
-		printf("\x1b[32mCHD: Track = %u, start = %u, end = %u, offset = %d, sector_size=%d, type = %u, pregap = "
-			   "%u\n\x1b[0m",
+		printf("CHD: Track = %u, start = %u, end = %u, offset = %d, sector_size=%d, type = %u, pregap = "
+			   "%u\n",
 			   i,
 			   table->tracks[i].start,
 			   table->tracks[i].end,
@@ -160,7 +160,7 @@ static int load_chd(const char* filename, toc_t* table)
 			   table->tracks[i].sector_size,
 			   table->tracks[i].type,
 			   table->tracks[i].pregap);
-		printf("\x1b[32mCHD: Track = %u, Index %u %u seconds\n\x1b[0m",
+		printf("CHD: Track = %u, Index %u %u seconds\n",
 			   i,
 			   table->tracks[i].indexes[0],
 			   table->tracks[i].indexes[1]);
@@ -183,12 +183,12 @@ int cdi_load_cue(const char* filename, toc_t* table)
 
 	unload_cue(table);
 	strcpy(fname, filename);
-	printf("\x1b[32mCDI: Open CUE: %s\n\x1b[0m", fname);
+	printf("CDI: Open CUE: %s\n", fname);
 
 	memset(cue, 0, sizeof(cue));
 	if (!FileLoad(fname, cue, sizeof(cue) - 1))
 	{
-		printf("\x1b[32mCDI: cannot load file: %s\n\x1b[0m", fname);
+		printf("CDI: cannot load file: %s\n", fname);
 		return 0;
 	}
 
@@ -197,7 +197,7 @@ int cdi_load_cue(const char* filename, toc_t* table)
 	memcpy(&fname[strlen(fname) - 4], ".sub", 4);
 	if (FileOpen(&toc.sub, getFullPath(fname)), 1)
 	{
-		printf("\x1b[32mCDI: Using .sub file for subchannel RW: %s\n\x1b[0m", fname);
+		printf("CDI: Using .sub file for subchannel RW: %s\n", fname);
 		sub_loaded_from_cdg = false;
 	}
 	else
@@ -205,7 +205,7 @@ int cdi_load_cue(const char* filename, toc_t* table)
 		memcpy(&fname[strlen(fname) - 4], ".cdg", 4);
 		if (FileOpen(&toc.sub, getFullPath(fname)),1)
 		{
-			printf("\x1b[32mCDI: Using .cdg file for subchannel RW: %s\n\x1b[0m", fname);
+			printf("CDI: Using .cdg file for subchannel RW: %s\n", fname);
 			sub_loaded_from_cdg = true;
 		}
 	}
@@ -250,14 +250,14 @@ int cdi_load_cue(const char* filename, toc_t* table)
 
 			table->tracks[table->last].f.filp = (FILE*)"x";
 
-			printf("\x1b[32mCDI: Open track file: %s\n\x1b[0m", fname);
+			printf("CDI: Open track file: %s\n", fname);
 
 			table->tracks[table->last].offset = 0;
 
 			if (!strstr(lptr, "BINARY"))
 			{
 				FileClose(&table->tracks[table->last].f);
-				printf("\x1b[32mCDI: unsupported file: %s\n\x1b[0m", fname);
+				printf("CDI: unsupported file: %s\n", fname);
 				return 0;
 			}
 		}
@@ -274,7 +274,7 @@ int cdi_load_cue(const char* filename, toc_t* table)
 			if (bb != (table->last + 1))
 			{
 				FileClose(&table->tracks[table->last].f);
-				printf("\x1b[32mCDI: missing tracks: %s\n\x1b[0m", fname);
+				printf("CDI: missing tracks: %s\n", fname);
 				return 0;
 			}
 			bool mode1{strstr(lptr, "MODE1/2352") != nullptr};
@@ -295,7 +295,7 @@ int cdi_load_cue(const char* filename, toc_t* table)
 			else
 			{
 				FileClose(&table->tracks[table->last].f);
-				printf("\x1b[32mCDI: unsupported track type: %s\n\x1b[0m", lptr);
+				printf("CDI: unsupported track type: %s\n", lptr);
 				return 0;
 			}
 		}
@@ -340,8 +340,8 @@ int cdi_load_cue(const char* filename, toc_t* table)
 
 	for (int i = 0; i < table->last; i++)
 	{
-		printf("\x1b[32mCUE: Track = %u, start = %u, end = %u, offset = %d, sector_size=%d, type = %u, pregap = "
-			   "%u\n\x1b[0m",
+		printf("CUE: Track = %u, start = %u, end = %u, offset = %d, sector_size=%d, type = %u, pregap = "
+			   "%u\n",
 			   i,
 			   table->tracks[i].start,
 			   table->tracks[i].end,
@@ -427,13 +427,14 @@ static int load_cd_image(const char* filename, toc_t* table)
 	return result;
 }
 
-static void prepare_toc_buffer(toc_t* toc)
+void prepare_toc_buffer(toc_t* toc)
 {
 	struct toc_entry* toc_ptr = toc_buffer.data();
 	toc_entry_count = 0;
 
 	auto add_entry = [&](uint8_t control, uint8_t track, uint8_t m, uint8_t s, uint8_t f)
 	{
+		printf("TOC Entry %02x %02x %02x %02x %02x\n", control, track, m, s, f);
 		for (int i = 0; i < 3; i++)
 		{
 			toc_ptr->control = control;
@@ -986,7 +987,7 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 							}
 							else
 							{
-								printf("\x1b[32mCDI: CHD read error: %d\n\x1b[0m", lba);
+								printf("CDI: CHD read error: %d\n", lba);
 							}
 
 							//Just use the read sector call with an offset, since we previously read that sector, it is already in the hunk cache
@@ -1005,7 +1006,7 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 								}
 								else
 								{
-									printf("\x1b[32mCDI: CHD read error: %d\n\x1b[0m", lba);
+									printf("CDI: CHD read error: %d\n", lba);
 								}
 							}
 

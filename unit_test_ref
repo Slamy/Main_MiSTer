@@ -1,464 +1,1003 @@
-[32mCDI: Open CUE: cues/2 Unlimited - Beyond Limits (Europe).cue
-[0m[32mCDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 1).bin
-[0m[32mCDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 2).bin
-[0m[32mCDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 3).bin
-[0m[32mCDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 4).bin
-[0m[32mCDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 5).bin
-[0m[32mCDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 6).bin
-[0m[32mCDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 7).bin
-[0m[32mCDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 8).bin
-[0m[32mCUE: Track = 0, start = 186750, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 186600
-[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 2, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 3, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 4, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 5, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 6, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 7, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCDI: Open CUE: cues/7th Guest, The (Germany) (Disc 1) (Das Spiel).cue
-[0m[32mCDI: Open track file: cues/7th Guest, The (Germany) (Disc 1) (Das Spiel).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/AIMS - Frogs and How they Live (1995)(AIMS Multimedia)(US)[DVC].cue
-[0m[32mCDI: Open track file: cues/AIMS - Frogs and How they Live (1995)(AIMS Multimedia)(US)[DVC].iso
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/AIMS - Learning About Ecology (1995)(AIMS Multimedia)(US)[DVC].cue
-[0m[32mCDI: Open track file: cues/AIMS - Learning About Ecology (1995)(AIMS Multimedia)(US)[DVC].iso
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/AIUEO (Japan).cue
-[0m[32mCDI: Open track file: cues/AIUEO (Japan).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Addams Family, The (USA) (Disc 1).cue
-[0m[32mCDI: Open track file: cues/Addams Family, The (USA) (Disc 1).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Addams Family, The (USA) (Disc 2).cue
-[0m[32mCDI: Open track file: cues/Addams Family, The (USA) (Disc 2).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Alice in Wonderland (Europe).cue
-[0m[32mCDI: Open track file: cues/Alice in Wonderland (Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Alien Gate (USA).cue
-[0m[32mCDI: Open track file: cues/Alien Gate (USA) (Track 1).bin
-[0m[32mCDI: Open track file: cues/Alien Gate (USA) (Track 2).bin
-[0m[32mCUE: Track = 0, start = 7895, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 7745
-[0m[32mCUE: Track = 1, start = 325, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 175
-[0m[32mCDI: Open CUE: cues/Apprentice_USA_multi.cue
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 01).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 02).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 03).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 04).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 05).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 06).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 07).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 08).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 09).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 10).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 11).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 12).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 13).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 14).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 15).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 16).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 17).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 18).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 19).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 20).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 21).bin
-[0m[32mCDI: Open track file: cues/Apprentice_USA_multi (Track 22).bin
-[0m[32mCUE: Track = 0, start = 69300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 69150
-[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 2, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 3, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 4, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 5, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 6, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 7, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 8, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 9, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 10, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 11, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 12, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 13, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 14, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 15, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 16, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 17, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 18, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 19, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 20, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 21, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCDI: Open CUE: cues/Apprentice_USA_single.cue
-[0m[32mCDI: Open track file: cues/Apprentice_USA_single.bin
-[0m[32mCUE: Track = 0, start = 69300, end = 88799, offset = 0, sector_size=2352, type = 0, pregap = 69150
-[0m[32mCUE: Track = 1, start = 88950, end = 107624, offset = 208504800, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 2, start = 107775, end = 112199, offset = 252781200, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 3, start = 112350, end = 133649, offset = 263541600, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 4, start = 133800, end = 138224, offset = 313992000, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 5, start = 138375, end = 159824, offset = 324752400, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 6, start = 159975, end = 164774, offset = 375555600, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 7, start = 164925, end = 185399, offset = 387198000, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 8, start = 185550, end = 190124, offset = 435708000, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 9, start = 190275, end = 208874, offset = 446821200, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 10, start = 209025, end = 212999, offset = 490921200, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 11, start = 213150, end = 232199, offset = 500623200, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 12, start = 232350, end = 236699, offset = 545781600, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 13, start = 236850, end = 241874, offset = 556365600, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 14, start = 242025, end = 256124, offset = 568537200, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 15, start = 256275, end = 256874, offset = 602053200, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 16, start = 257025, end = 265649, offset = 603817200, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 17, start = 265800, end = 267374, offset = 624456000, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 18, start = 267525, end = 269999, offset = 628513200, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 19, start = 270150, end = 271649, offset = 634687200, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 20, start = 271800, end = 274274, offset = 638568000, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 21, start = 274425, end = 149, offset = 644742000, sector_size=2352, type = 0, pregap = 150
-[0m[32mCDI: Open CUE: cues/Arcade Classics (E)(CD-i).cue
-[0m[32mCDI: Open track file: cues/Arcade Classics (E)(CD-i).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Audio-CD-swap.cue
-[0m[32mCDI: Open track file: cues/Audio-CD-swap.bin
-[0m[32mCUE: Track = 0, start = 150, end = 15635, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 1, start = 15645, end = 31763, offset = 36423072, sector_size=2352, type = 0, pregap = 9
-[0m[32mCUE: Track = 2, start = 31785, end = 54931, offset = 74356128, sector_size=2352, type = 0, pregap = 21
-[0m[32mCUE: Track = 3, start = 54947, end = 149, offset = 128847264, sector_size=2352, type = 0, pregap = 15
-[0m[32mCDI: Open CUE: cues/Audio-CD.cue
-[0m[32mCDI: Open track file: cues/Audio-CD.bin
-[0m[32mCUE: Track = 0, start = 150, end = 15635, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 1, start = 15645, end = 31763, offset = 36423072, sector_size=2352, type = 0, pregap = 9
-[0m[32mCUE: Track = 2, start = 31785, end = 54931, offset = 74356128, sector_size=2352, type = 0, pregap = 21
-[0m[32mCUE: Track = 3, start = 54947, end = 149, offset = 128847264, sector_size=2352, type = 0, pregap = 15
-[0m[32mCDI: Open CUE: cues/BMB Karaoke 1 (Japan).cue
-[0m[32mCDI: Open track file: cues/BMB Karaoke 1 (Japan).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/BrainDead 13 (Europe).cue
-[0m[32mCDI: Open track file: cues/BrainDead 13 (Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Breast Self-Examination - Auto-Examen Del Seno (USA) (En,Es).cue
-[0m[32mCDI: Open track file: cues/Breast Self-Examination - Auto-Examen Del Seno (USA) (En,Es).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Burger King - CD-i Training - November, 1997 (USA) (Fr,Es).cue
-[0m[32mCDI: Open track file: cues/Burger King - CD-i Training - November, 1997 (USA) (Fr,Es).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Burn-Cycle.cue
-[0m[32mCDI: Open track file: cues/Burn-Cycle.bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/CD [TopGun Disc 1].cue
-[0m[32mCDI: Open track file: cues/CD [TopGun Disc 1].bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/CD [TopGun Disc 2].cue
-[0m[32mCDI: Open track file: cues/CD [TopGun Disc 2].bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/CD-i Demonstration Disc (USA).cue
-[0m[32mCDI: Open track file: cues/CD-i Demonstration Disc (USA).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Chaos Control (Germany).cue
-[0m[32mCDI: Open track file: cues/Chaos Control (Germany).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Christmas Country (Europe).cue
-[0m[32mCDI: Open track file: cues/Christmas Country (Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Christmas Crisis (Europe).cue
-[0m[32mCDI: Open track file: cues/Christmas Crisis (Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Coneheads (USA) (Disc 1).cue
-[0m[32mCDI: Open track file: cues/Coneheads (USA) (Disc 1).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Creature Shock (Europe) (Disc 1).cue
-[0m[32mCDI: Open track file: cues/Creature Shock (Europe) (Disc 1).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Creature Shock (Europe) (Disc 2).cue
-[0m[32mCDI: Open track file: cues/Creature Shock (Europe) (Disc 2).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/David and Goliath (USA).cue
-[0m[32mCDI: Open track file: cues/David and Goliath (USA).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Diamant Frituurtest (Netherlands).cue
-[0m[32mCDI: Open track file: cues/Diamant Frituurtest (Netherlands) (Track 1).bin
-[0m[32mCDI: Open track file: cues/Diamant Frituurtest (Netherlands) (Track 2).bin
-[0m[32mCUE: Track = 0, start = 155, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 5
-[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCDI: Open CUE: cues/Dragon_s_Lair_US.cue
-[0m[32mCDI: Open track file: cues/Dragon_s_Lair_US.bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Earth Command (Germany).cue
-[0m[32mCDI: Open track file: cues/Earth Command (Germany).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Escape from CyberCity (USA Europe).cue
-[0m[32mCDI: Open track file: cues/Escape from CyberCity (USA Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Felix the Cat's Giant Electronic Comic Book (USA, Europe) (Unl).cue
-[0m[32mCDI: Open track file: cues/Felix the Cat's Giant Electronic Comic Book (USA, Europe) (Unl).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Flowers of Robert Mapplethorpe, The (USA).cue
-[0m[32mCDI: Open track file: cues/Flowers of Robert Mapplethorpe, The (USA) (Track 1).bin
-[0m[32mCDI: Open track file: cues/Flowers of Robert Mapplethorpe, The (USA) (Track 2).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCDI: Open CUE: cues/Follow Your Dreams (Germany).cue
-[0m[32mCDI: Open track file: cues/Follow Your Dreams (Germany) (Track 1).bin
-[0m[32mCDI: Open track file: cues/Follow Your Dreams (Germany) (Track 2).bin
-[0m[32mCDI: Open track file: cues/Follow Your Dreams (Germany) (Track 3).bin
-[0m[32mCDI: Open track file: cues/Follow Your Dreams (Germany) (Track 4).bin
-[0m[32mCDI: Open track file: cues/Follow Your Dreams (Germany) (Track 5).bin
-[0m[32mCDI: Open track file: cues/Follow Your Dreams (Germany) (Track 6).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 2, start = 150, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 3, start = 150, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 4, start = 150, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 5, start = 150, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCDI: Open CUE: cues/Frog Feast (USA) (Unl).cue
-[0m[32mCDI: Open track file: cues/Frog Feast (USA) (Unl).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Fun Tower (Europe) (En,Fr,De,Es,It,Nl).cue
-[0m[32mCDI: Open track file: cues/Fun Tower (Europe) (En,Fr,De,Es,It,Nl).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/God Streams (Japan).cue
-[0m[32mCDI: Open track file: cues/God Streams (Japan) (Track 1).bin
-[0m[32mCDI: Open track file: cues/God Streams (Japan) (Track 2).bin
-[0m[32mCDI: Open track file: cues/God Streams (Japan) (Track 3).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
-[0m[32mCUE: Track = 2, start = 375, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 225
-[0m[32mCDI: Open CUE: cues/Golf My Way (USA) (Disc 1).cue
-[0m[32mCDI: Open track file: cues/Golf My Way (USA) (Disc 1).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Golf Tips (Europe) (En,Ja).cue
-[0m[32mCDI: Open track file: cues/Golf Tips (Europe) (En,Ja).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Guignols de l'Info, Les ...le Jeu ! (France).cue
-[0m[32mCDI: Open track file: cues/Guignols de l'Info, Les ...le Jeu ! (France).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Historia del Arte Espanol (Spain) (Disc 01) (Los Origenes - Prehistoria y Primeras Civilizaciones).cue
-[0m[32mCDI: Open track file: cues/Historia del Arte Espanol (Spain) (Disc 01) (Los Origenes - Prehistoria y Primeras Civilizaciones).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Hotel Mario.cue
-[0m[32mCDI: Open track file: cues/Hotel Mario.bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Imagination in Motion - A New Era in 3D Chill Out Video (1996)(AIMS Multimedia)(EU)[DVC].cue
-[0m[32mCDI: Open track file: cues/Imagination in Motion - A New Era in 3D Chill Out Video (1996)(AIMS Multimedia)(EU)(Track 1 of 4)[DVC].iso
-[0m[32mCDI: Open track file: cues/Imagination in Motion - A New Era in 3D Chill Out Video (1996)(AIMS Multimedia)(EU)(Track 2 of 4)[DVC].iso
-[0m[32mCDI: Open track file: cues/Imagination in Motion - A New Era in 3D Chill Out Video (1996)(AIMS Multimedia)(EU)(Track 3 of 4)[DVC].iso
-[0m[32mCDI: Open track file: cues/Imagination in Motion - A New Era in 3D Chill Out Video (1996)(AIMS Multimedia)(EU)(Track 4 of 4)[DVC].iso
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 2, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 3, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Kether (Germany) (En,De) (v3.08).cue
-[0m[32mCDI: Open track file: cues/Kether (Germany) (En,De) (v3.08).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Kether (Germany) (En,De).cue
-[0m[32mCDI: Open track file: cues/Kether (Germany) (En,De).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Kingdom - The Far Reaches (Europe).cue
-[0m[32mCDI: Open track file: cues/Kingdom - The Far Reaches (Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Last Bounty Hunter, The (Europe).cue
-[0m[32mCDI: Open track file: cues/Last Bounty Hunter, The (Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Link - Die Fratzen des Boesen (Germany).cue
-[0m[32mCDI: Open track file: cues/Link - Die Fratzen des Boesen (Germany).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Link - The Faces of Evil (Europe).cue
-[0m[32mCDI: Open track file: cues/Link - The Faces of Evil (Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Lost Eden (Germany).cue
-[0m[32mCDI: Open track file: cues/Lost Eden (Germany).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Lost Ride, The (Europe).cue
-[0m[32mCDI: Open track file: cues/Lost Ride, The (Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/LuckyLuke.cue
-[0m[32mCDI: Open track file: cues/LuckyLuke.bin
-[0m[32mCUE: Track = 0, start = 100575, end = 113999, offset = 0, sector_size=2352, type = 0, pregap = 100425
-[0m[32mCUE: Track = 1, start = 114150, end = 130649, offset = 267775200, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 2, start = 130800, end = 144974, offset = 306936000, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 3, start = 145125, end = 160949, offset = 340628400, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 4, start = 161100, end = 171299, offset = 378201600, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 5, start = 171450, end = 177374, offset = 402544800, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 6, start = 177525, end = 184199, offset = 416833200, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 7, start = 184350, end = 191174, offset = 432885600, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 8, start = 191325, end = 197099, offset = 449290800, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 9, start = 197250, end = 200174, offset = 463226400, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 10, start = 200325, end = 201899, offset = 470458800, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 11, start = 202050, end = 206549, offset = 474516000, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 12, start = 206700, end = 212924, offset = 485452800, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 13, start = 213075, end = 219374, offset = 500446800, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 14, start = 219525, end = 231374, offset = 515617200, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 15, start = 231525, end = 149, offset = 543841200, sector_size=2352, type = 0, pregap = 150
-[0m[32mCDI: Open CUE: cues/Mad Dog McCree (Europe) (Alt).cue
-[0m[32mCDI: Open track file: cues/Mad Dog McCree (Europe) (Alt).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Mad Dog McCree (France).cue
-[0m[32mCDI: Open track file: cues/Mad Dog McCree (France).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Mega Maze (Europe).cue
-[0m[32mCDI: Open track file: cues/Mega Maze (Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Mutant Rampage - Bodyslam (Europe).cue
-[0m[32mCDI: Open track file: cues/Mutant Rampage - Bodyslam (Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Mystic Midway - Phantom Express (USA).cue
-[0m[32mCDI: Open track file: cues/Mystic Midway - Phantom Express (USA).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Mystic Midway - Rest in Pieces (USA, Europe).cue
-[0m[32mCDI: Open track file: cues/Mystic Midway - Rest in Pieces (USA, Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Nobelia (USA).cue
-[0m[32mCDI: Open track file: cues/Nobelia (USA).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/P.A.W.S - Personal Automated Wagging System (Europe).cue
-[0m[32mCDI: Open track file: cues/P.A.W.S - Personal Automated Wagging System (Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Philips CDI Format Test Disc 1 (Europe).cue
-[0m[32mCDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 01).bin
-[0m[32mCDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 02).bin
-[0m[32mCDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 03).bin
-[0m[32mCDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 04).bin
-[0m[32mCDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 05).bin
-[0m[32mCDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 06).bin
-[0m[32mCDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 07).bin
-[0m[32mCDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 08).bin
-[0m[32mCDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 09).bin
-[0m[32mCDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 10).bin
-[0m[32mCDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 11).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 2, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 3, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 4, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 5, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 6, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 7, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 8, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 9, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 10, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Photo CD Gravure - Art Arts Series - HinoSelf - Terumasa Hino (Japan).cue
-[0m[32mCDI: Open track file: cues/Photo CD Gravure - Art Arts Series - HinoSelf - Terumasa Hino (Japan) (Track 1).bin
-[0m[32mCDI: Open track file: cues/Photo CD Gravure - Art Arts Series - HinoSelf - Terumasa Hino (Japan) (Track 2).bin
-[0m[32mCDI: Open track file: cues/Photo CD Gravure - Art Arts Series - HinoSelf - Terumasa Hino (Japan) (Track 3).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
-[0m[32mCUE: Track = 2, start = 375, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 225
-[0m[32mCDI: Open CUE: cues/Photo CD Sample Disc (USA).cue
-[0m[32mCDI: Open track file: cues/Photo CD Sample Disc (USA).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Plunderball (USA) (Unl).cue
-[0m[32mCDI: Open track file: cues/Plunderball (USA) (Unl).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Power Hitter (Europe).cue
-[0m[32mCDI: Open track file: cues/Power Hitter (Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/QuizMania (Italy).cue
-[0m[32mCDI: Open track file: cues/QuizMania (Italy).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Richard Scarry's wunderbarste Geschichten aus Schaffenau (Germany).cue
-[0m[32mCDI: Open track file: cues/Richard Scarry's wunderbarste Geschichten aus Schaffenau (Germany).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Robocop (USA) (Disc 1).cue
-[0m[32mCDI: Open track file: cues/Robocop (USA) (Disc 1).bin
-[0m[32mCUE: Track = 0, start = 150, end = 3599, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 3750, end = 4201, offset = 8114400, sector_size=2352, type = 2, pregap = 150
-[0m[32mCUE: Track = 2, start = 4352, end = 4803, offset = 9530304, sector_size=2352, type = 2, pregap = 150
-[0m[32mCUE: Track = 3, start = 4954, end = 5438, offset = 10946208, sector_size=2352, type = 2, pregap = 150
-[0m[32mCUE: Track = 4, start = 5589, end = 6930, offset = 12439728, sector_size=2352, type = 2, pregap = 150
-[0m[32mCUE: Track = 5, start = 7081, end = 149, offset = 15948912, sector_size=2352, type = 2, pregap = 150
-[0m[32mCDI: Open CUE: cues/Robocop (USA) (Disc 2).cue
-[0m[32mCDI: Open track file: cues/Robocop (USA) (Disc 2) (Track 1).bin
-[0m[32mCDI: Open track file: cues/Robocop (USA) (Disc 2) (Track 2).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
-[0m[32mCDI: Open CUE: cues/Schtroumpfs, Les - Le Teleportaschtroumpf (France).cue
-[0m[32mCDI: Open track file: cues/Schtroumpfs, Les - Le Teleportaschtroumpf (France).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Snatcher.cue
-[0m[32mCDI: Open track file: cues/Snatcher.bin
-[0m[32mCUE: Track = 0, start = 150, end = 18439, offset = 0, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 1, start = 18440, end = 35336, offset = 43018080, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 2, start = 35337, end = 45536, offset = 82759824, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 3, start = 45537, end = 46724, offset = 106750224, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 4, start = 46725, end = 55044, offset = 109544400, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 5, start = 55045, end = 65671, offset = 129113040, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 6, start = 65672, end = 72604, offset = 154107744, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 7, start = 72605, end = 79114, offset = 170414160, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 8, start = 79115, end = 83351, offset = 185725680, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 9, start = 83352, end = 95989, offset = 195691104, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 10, start = 95990, end = 104801, offset = 225415680, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 11, start = 104802, end = 112656, offset = 246141504, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 12, start = 112657, end = 118266, offset = 264616464, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 13, start = 118267, end = 136171, offset = 277811184, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 14, start = 136172, end = 146579, offset = 319923744, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 15, start = 146580, end = 162714, offset = 344403360, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 16, start = 162715, end = 176286, offset = 382352880, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 17, start = 176287, end = 185169, offset = 414274224, sector_size=2352, type = 0, pregap = 0
-[0m[32mCUE: Track = 18, start = 185170, end = 149, offset = 435167040, sector_size=2352, type = 0, pregap = 0
-[0m[32mCDI: Open CUE: cues/Space Ace (Europe).cue
-[0m[32mCDI: Open track file: cues/Space Ace (Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Star Trek VI - Terre Inconnue (France) (Disc 1).cue
-[0m[32mCDI: Open track file: cues/Star Trek VI - Terre Inconnue (France) (Disc 1).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Star-Wars-Episode-IV-A-New-Hope-Disc-1.cue
-[0m[32mCDI: Open track file: cues/Star-Wars-Episode-IV-A-New-Hope-Disc-1 (Track 1).bin
-[0m[32mCDI: Open track file: cues/Star-Wars-Episode-IV-A-New-Hope-Disc-1 (Track 2).bin
-[0m[32mCDI: Open track file: cues/Star-Wars-Episode-IV-A-New-Hope-Disc-1 (Track 3).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
-[0m[32mCUE: Track = 2, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
-[0m[32mCDI: Open CUE: cues/Terminator 2 - Judgment Day (USA) (Disc 1).cue
-[0m[32mCDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 1) (Track 1).bin
-[0m[32mCDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 1) (Track 2).bin
-[0m[32mCDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 1) (Track 3).bin
-[0m[32mCDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 1) (Track 4).bin
-[0m[32mCDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 1) (Track 5).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
-[0m[32mCUE: Track = 2, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
-[0m[32mCUE: Track = 3, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
-[0m[32mCUE: Track = 4, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
-[0m[32mCDI: Open CUE: cues/Terminator 2 - Judgment Day (USA) (Disc 2).cue
-[0m[32mCDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 2) (Track 1).bin
-[0m[32mCDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 2) (Track 2).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
-[0m[32mCDI: Open CUE: cues/Tetris (USA, Europe).cue
-[0m[32mCDI: Open track file: cues/Tetris (USA, Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Thunder in Paradise (USA) (Disc 1) (The Game).cue
-[0m[32mCDI: Open track file: cues/Thunder in Paradise (USA) (Disc 1) (The Game).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Ultimate Noah's Ark, The (UK).cue
-[0m[32mCDI: Open track file: cues/Ultimate Noah's Ark, The (UK).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Ultimate Noah's Ark, The (USA).cue
-[0m[32mCDI: Open track file: cues/Ultimate Noah's Ark, The (USA).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Validation Disc (Europe) (Disc 1).cue
-[0m[32mCDI: Open track file: cues/Validation Disc (Europe) (Disc 1).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Validation Disc (Japan) (Disc 2).cue
-[0m[32mCDI: Open track file: cues/Validation Disc (Japan) (Disc 2) (Track 1).bin
-[0m[32mCDI: Open track file: cues/Validation Disc (Japan) (Disc 2) (Track 2).bin
-[0m[32mCDI: Open track file: cues/Validation Disc (Japan) (Disc 2) (Track 3).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
-[0m[32mCUE: Track = 2, start = 313, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 163
-[0m[32mCDI: Open CUE: cues/Who Shot Johnny Rock (Europe).cue
-[0m[32mCDI: Open track file: cues/Who Shot Johnny Rock (Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Zelda - Der Zauberstab von Gamelon (Germany).cue
-[0m[32mCDI: Open track file: cues/Zelda - Der Zauberstab von Gamelon (Germany).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Zenith (Europe).cue
-[0m[32mCDI: Open track file: cues/Zenith (Europe).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/Zombie Dinos vom Planeten Zeltoid (Germany).cue
-[0m[32mCDI: Open track file: cues/Zombie Dinos vom Planeten Zeltoid (Germany).bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCDI: Open CUE: cues/darkchaser.cue
-[0m[32mCDI: Open track file: cues/darkchaser.img
-[0m[32mCUE: Track = 0, start = 150, end = 451, offset = 0, sector_size=2352, type = 2, pregap = 0
-[0m[32mCUE: Track = 1, start = 602, end = 73264, offset = 710304, sector_size=2352, type = 2, pregap = 150
-[0m[32mCUE: Track = 2, start = 73490, end = 149, offset = 171966480, sector_size=2352, type = 0, pregap = 225
-[0m[32mCDI: Open CUE: cues/fmvdemo.cue
-[0m[32mCDI: Open track file: cues/fmvdemo.bin
-[0m[32mCUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 1, pregap = 0
-[0m
+CDI: Open CUE: cues/2 Unlimited - Beyond Limits (Europe).cue
+CDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 1).bin
+CDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 2).bin
+CDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 3).bin
+CDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 4).bin
+CDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 5).bin
+CDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 6).bin
+CDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 7).bin
+CDI: Open track file: cues/2 Unlimited - Beyond Limits (Europe) (Track 8).bin
+CUE: Track = 0, start = 186750, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 186600
+CUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 2, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 3, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 4, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 5, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 6, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 7, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+TOC Entry 01 01 41 30 00
+TOC Entry 01 02 00 04 00
+TOC Entry 01 03 00 04 00
+TOC Entry 01 04 00 04 00
+TOC Entry 01 05 00 04 00
+TOC Entry 01 06 00 04 00
+TOC Entry 01 07 00 04 00
+TOC Entry 01 08 00 04 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 08 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/7th Guest, The (Germany) (Disc 1) (Das Spiel).cue
+CDI: Open track file: cues/7th Guest, The (Germany) (Disc 1) (Das Spiel).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/AIMS - Frogs and How they Live (1995)(AIMS Multimedia)(US)[DVC].cue
+CDI: Open track file: cues/AIMS - Frogs and How they Live (1995)(AIMS Multimedia)(US)[DVC].iso
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/AIMS - Learning About Ecology (1995)(AIMS Multimedia)(US)[DVC].cue
+CDI: Open track file: cues/AIMS - Learning About Ecology (1995)(AIMS Multimedia)(US)[DVC].iso
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/AIUEO (Japan).cue
+CDI: Open track file: cues/AIUEO (Japan).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Addams Family, The (USA) (Disc 1).cue
+CDI: Open track file: cues/Addams Family, The (USA) (Disc 1).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Addams Family, The (USA) (Disc 2).cue
+CDI: Open track file: cues/Addams Family, The (USA) (Disc 2).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Alice in Wonderland (Europe).cue
+CDI: Open track file: cues/Alice in Wonderland (Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Alien Gate (USA).cue
+CDI: Open track file: cues/Alien Gate (USA) (Track 1).bin
+CDI: Open track file: cues/Alien Gate (USA) (Track 2).bin
+CUE: Track = 0, start = 7895, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 7745
+CUE: Track = 1, start = 325, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 175
+TOC Entry 01 01 01 45 20
+TOC Entry 01 02 00 04 25
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 02 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Apprentice_USA_multi.cue
+CDI: Open track file: cues/Apprentice_USA_multi (Track 01).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 02).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 03).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 04).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 05).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 06).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 07).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 08).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 09).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 10).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 11).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 12).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 13).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 14).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 15).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 16).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 17).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 18).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 19).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 20).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 21).bin
+CDI: Open track file: cues/Apprentice_USA_multi (Track 22).bin
+CUE: Track = 0, start = 69300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 69150
+CUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 2, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 3, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 4, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 5, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 6, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 7, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 8, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 9, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 10, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 11, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 12, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 13, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 14, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 15, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 16, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 17, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 18, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 19, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 20, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 21, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+TOC Entry 01 01 15 24 00
+TOC Entry 01 02 00 04 00
+TOC Entry 01 03 00 04 00
+TOC Entry 01 04 00 04 00
+TOC Entry 01 05 00 04 00
+TOC Entry 01 06 00 04 00
+TOC Entry 01 07 00 04 00
+TOC Entry 01 08 00 04 00
+TOC Entry 01 09 00 04 00
+TOC Entry 01 10 00 04 00
+TOC Entry 01 11 00 04 00
+TOC Entry 01 12 00 04 00
+TOC Entry 01 13 00 04 00
+TOC Entry 01 14 00 04 00
+TOC Entry 01 15 00 04 00
+TOC Entry 01 16 00 04 00
+TOC Entry 01 17 00 04 00
+TOC Entry 01 18 00 04 00
+TOC Entry 01 19 00 04 00
+TOC Entry 01 20 00 04 00
+TOC Entry 01 21 00 04 00
+TOC Entry 01 22 00 04 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 22 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Apprentice_USA_single.cue
+CDI: Open track file: cues/Apprentice_USA_single.bin
+CUE: Track = 0, start = 69300, end = 88799, offset = 0, sector_size=2352, type = 0, pregap = 69150
+CUE: Track = 1, start = 88950, end = 107624, offset = 208504800, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 2, start = 107775, end = 112199, offset = 252781200, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 3, start = 112350, end = 133649, offset = 263541600, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 4, start = 133800, end = 138224, offset = 313992000, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 5, start = 138375, end = 159824, offset = 324752400, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 6, start = 159975, end = 164774, offset = 375555600, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 7, start = 164925, end = 185399, offset = 387198000, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 8, start = 185550, end = 190124, offset = 435708000, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 9, start = 190275, end = 208874, offset = 446821200, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 10, start = 209025, end = 212999, offset = 490921200, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 11, start = 213150, end = 232199, offset = 500623200, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 12, start = 232350, end = 236699, offset = 545781600, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 13, start = 236850, end = 241874, offset = 556365600, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 14, start = 242025, end = 256124, offset = 568537200, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 15, start = 256275, end = 256874, offset = 602053200, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 16, start = 257025, end = 265649, offset = 603817200, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 17, start = 265800, end = 267374, offset = 624456000, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 18, start = 267525, end = 269999, offset = 628513200, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 19, start = 270150, end = 271649, offset = 634687200, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 20, start = 271800, end = 274274, offset = 638568000, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 21, start = 274425, end = 149, offset = 644742000, sector_size=2352, type = 0, pregap = 150
+TOC Entry 01 01 15 24 00
+TOC Entry 01 02 19 46 00
+TOC Entry 01 03 23 57 00
+TOC Entry 01 04 24 58 00
+TOC Entry 01 05 29 44 00
+TOC Entry 01 06 30 45 00
+TOC Entry 01 07 35 33 00
+TOC Entry 01 08 36 39 00
+TOC Entry 01 09 41 14 00
+TOC Entry 01 10 42 17 00
+TOC Entry 01 11 46 27 00
+TOC Entry 01 12 47 22 00
+TOC Entry 01 13 51 38 00
+TOC Entry 01 14 52 38 00
+TOC Entry 01 15 53 47 00
+TOC Entry 01 16 56 57 00
+TOC Entry 01 17 57 07 00
+TOC Entry 01 18 59 04 00
+TOC Entry 01 19 59 27 00
+TOC Entry 01 20 60 02 00
+TOC Entry 01 21 60 24 00
+TOC Entry 01 22 60 59 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 22 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Arcade Classics (E)(CD-i).cue
+CDI: Open track file: cues/Arcade Classics (E)(CD-i).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Audio-CD-swap.cue
+CDI: Open track file: cues/Audio-CD-swap.bin
+CUE: Track = 0, start = 150, end = 15635, offset = 0, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 1, start = 15645, end = 31763, offset = 36423072, sector_size=2352, type = 0, pregap = 9
+CUE: Track = 2, start = 31785, end = 54931, offset = 74356128, sector_size=2352, type = 0, pregap = 21
+CUE: Track = 3, start = 54947, end = 149, offset = 128847264, sector_size=2352, type = 0, pregap = 15
+TOC Entry 01 01 00 02 00
+TOC Entry 01 02 03 28 45
+TOC Entry 01 03 07 03 60
+TOC Entry 01 04 12 12 47
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 04 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Audio-CD.cue
+CDI: Open track file: cues/Audio-CD.bin
+CUE: Track = 0, start = 150, end = 15635, offset = 0, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 1, start = 15645, end = 31763, offset = 36423072, sector_size=2352, type = 0, pregap = 9
+CUE: Track = 2, start = 31785, end = 54931, offset = 74356128, sector_size=2352, type = 0, pregap = 21
+CUE: Track = 3, start = 54947, end = 149, offset = 128847264, sector_size=2352, type = 0, pregap = 15
+TOC Entry 01 01 00 02 00
+TOC Entry 01 02 03 28 45
+TOC Entry 01 03 07 03 60
+TOC Entry 01 04 12 12 47
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 04 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/BMB Karaoke 1 (Japan).cue
+CDI: Open track file: cues/BMB Karaoke 1 (Japan).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/BrainDead 13 (Europe).cue
+CDI: Open track file: cues/BrainDead 13 (Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Breast Self-Examination - Auto-Examen Del Seno (USA) (En,Es).cue
+CDI: Open track file: cues/Breast Self-Examination - Auto-Examen Del Seno (USA) (En,Es).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Burger King - CD-i Training - November, 1997 (USA) (Fr,Es).cue
+CDI: Open track file: cues/Burger King - CD-i Training - November, 1997 (USA) (Fr,Es).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Burn-Cycle.cue
+CDI: Open track file: cues/Burn-Cycle.bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/CD [TopGun Disc 1].cue
+CDI: Open track file: cues/CD [TopGun Disc 1].bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/CD [TopGun Disc 2].cue
+CDI: Open track file: cues/CD [TopGun Disc 2].bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/CD-i Demonstration Disc (USA).cue
+CDI: Open track file: cues/CD-i Demonstration Disc (USA).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Chaos Control (Germany).cue
+CDI: Open track file: cues/Chaos Control (Germany).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Christmas Country (Europe).cue
+CDI: Open track file: cues/Christmas Country (Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Christmas Crisis (Europe).cue
+CDI: Open track file: cues/Christmas Crisis (Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Coneheads (USA) (Disc 1).cue
+CDI: Open track file: cues/Coneheads (USA) (Disc 1).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Creature Shock (Europe) (Disc 1).cue
+CDI: Open track file: cues/Creature Shock (Europe) (Disc 1).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Creature Shock (Europe) (Disc 2).cue
+CDI: Open track file: cues/Creature Shock (Europe) (Disc 2).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/David and Goliath (USA).cue
+CDI: Open track file: cues/David and Goliath (USA).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Diamant Frituurtest (Netherlands).cue
+CDI: Open track file: cues/Diamant Frituurtest (Netherlands) (Track 1).bin
+CDI: Open track file: cues/Diamant Frituurtest (Netherlands) (Track 2).bin
+CUE: Track = 0, start = 155, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 5
+CUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+TOC Entry 41 01 00 02 05
+TOC Entry 01 02 00 04 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 02 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Dragon_s_Lair_US.cue
+CDI: Open track file: cues/Dragon_s_Lair_US.bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Earth Command (Germany).cue
+CDI: Open track file: cues/Earth Command (Germany).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Escape from CyberCity (USA Europe).cue
+CDI: Open track file: cues/Escape from CyberCity (USA Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Felix the Cat's Giant Electronic Comic Book (USA, Europe) (Unl).cue
+CDI: Open track file: cues/Felix the Cat's Giant Electronic Comic Book (USA, Europe) (Unl).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Flowers of Robert Mapplethorpe, The (USA).cue
+CDI: Open track file: cues/Flowers of Robert Mapplethorpe, The (USA) (Track 1).bin
+CDI: Open track file: cues/Flowers of Robert Mapplethorpe, The (USA) (Track 2).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+TOC Entry 41 01 00 02 00
+TOC Entry 01 02 00 04 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 02 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Follow Your Dreams (Germany).cue
+CDI: Open track file: cues/Follow Your Dreams (Germany) (Track 1).bin
+CDI: Open track file: cues/Follow Your Dreams (Germany) (Track 2).bin
+CDI: Open track file: cues/Follow Your Dreams (Germany) (Track 3).bin
+CDI: Open track file: cues/Follow Your Dreams (Germany) (Track 4).bin
+CDI: Open track file: cues/Follow Your Dreams (Germany) (Track 5).bin
+CDI: Open track file: cues/Follow Your Dreams (Germany) (Track 6).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 2, start = 150, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 3, start = 150, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 4, start = 150, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 5, start = 150, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 02 00 04 00
+TOC Entry 01 03 00 02 00
+TOC Entry 01 04 00 02 00
+TOC Entry 01 05 00 02 00
+TOC Entry 01 06 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 06 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Frog Feast (USA) (Unl).cue
+CDI: Open track file: cues/Frog Feast (USA) (Unl).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Fun Tower (Europe) (En,Fr,De,Es,It,Nl).cue
+CDI: Open track file: cues/Fun Tower (Europe) (En,Fr,De,Es,It,Nl).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/God Streams (Japan).cue
+CDI: Open track file: cues/God Streams (Japan) (Track 1).bin
+CDI: Open track file: cues/God Streams (Japan) (Track 2).bin
+CDI: Open track file: cues/God Streams (Japan) (Track 3).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
+CUE: Track = 2, start = 375, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 225
+TOC Entry 41 01 00 02 00
+TOC Entry 41 02 00 04 00
+TOC Entry 01 03 00 05 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 03 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Golf My Way (USA) (Disc 1).cue
+CDI: Open track file: cues/Golf My Way (USA) (Disc 1).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Golf Tips (Europe) (En,Ja).cue
+CDI: Open track file: cues/Golf Tips (Europe) (En,Ja).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Guignols de l'Info, Les ...le Jeu ! (France).cue
+CDI: Open track file: cues/Guignols de l'Info, Les ...le Jeu ! (France).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Historia del Arte Espanol (Spain) (Disc 01) (Los Origenes - Prehistoria y Primeras Civilizaciones).cue
+CDI: Open track file: cues/Historia del Arte Espanol (Spain) (Disc 01) (Los Origenes - Prehistoria y Primeras Civilizaciones).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Hotel Mario.cue
+CDI: Open track file: cues/Hotel Mario.bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/INXS - Listen Like Thieves (USA).cue
+CDI: Open track file: cues/INXS - Listen Like Thieves (USA) (Track 01).bin
+CDI: Open track file: cues/INXS - Listen Like Thieves (USA) (Track 02).bin
+CDI: Open track file: cues/INXS - Listen Like Thieves (USA) (Track 03).bin
+CDI: Open track file: cues/INXS - Listen Like Thieves (USA) (Track 04).bin
+CDI: Open track file: cues/INXS - Listen Like Thieves (USA) (Track 05).bin
+CDI: Open track file: cues/INXS - Listen Like Thieves (USA) (Track 06).bin
+CDI: Open track file: cues/INXS - Listen Like Thieves (USA) (Track 07).bin
+CDI: Open track file: cues/INXS - Listen Like Thieves (USA) (Track 08).bin
+CDI: Open track file: cues/INXS - Listen Like Thieves (USA) (Track 09).bin
+CDI: Open track file: cues/INXS - Listen Like Thieves (USA) (Track 10).bin
+CDI: Open track file: cues/INXS - Listen Like Thieves (USA) (Track 11).bin
+CUE: Track = 0, start = 183, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 33
+CUE: Track = 1, start = 150, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 2, start = 287, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 137
+CUE: Track = 3, start = 297, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 147
+CUE: Track = 4, start = 150, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 5, start = 238, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 88
+CUE: Track = 6, start = 150, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 7, start = 213, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 63
+CUE: Track = 8, start = 202, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 52
+CUE: Track = 9, start = 210, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 60
+CUE: Track = 10, start = 150, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 0
+TOC Entry 01 01 00 02 33
+TOC Entry 01 02 00 02 00
+TOC Entry 01 03 00 03 62
+TOC Entry 01 04 00 03 72
+TOC Entry 01 05 00 02 00
+TOC Entry 01 06 00 03 13
+TOC Entry 01 07 00 02 00
+TOC Entry 01 08 00 02 63
+TOC Entry 01 09 00 02 52
+TOC Entry 01 10 00 02 60
+TOC Entry 01 11 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 11 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Imagination in Motion - A New Era in 3D Chill Out Video (1996)(AIMS Multimedia)(EU)[DVC].cue
+CDI: Open track file: cues/Imagination in Motion - A New Era in 3D Chill Out Video (1996)(AIMS Multimedia)(EU)(Track 1 of 4)[DVC].iso
+CDI: Open track file: cues/Imagination in Motion - A New Era in 3D Chill Out Video (1996)(AIMS Multimedia)(EU)(Track 2 of 4)[DVC].iso
+CDI: Open track file: cues/Imagination in Motion - A New Era in 3D Chill Out Video (1996)(AIMS Multimedia)(EU)(Track 3 of 4)[DVC].iso
+CDI: Open track file: cues/Imagination in Motion - A New Era in 3D Chill Out Video (1996)(AIMS Multimedia)(EU)(Track 4 of 4)[DVC].iso
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 1, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 2, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 3, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 41 02 00 02 00
+TOC Entry 41 03 00 02 00
+TOC Entry 41 04 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 04 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Kether (Germany) (En,De) (v3.08).cue
+CDI: Open track file: cues/Kether (Germany) (En,De) (v3.08).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Kether (Germany) (En,De).cue
+CDI: Open track file: cues/Kether (Germany) (En,De).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Kingdom - The Far Reaches (Europe).cue
+CDI: Open track file: cues/Kingdom - The Far Reaches (Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/LachIschOdaWas.cue
+CDI: Open track file: cues/Audio-CD-swap.bin
+CUE: Track = 0, start = 150, end = 15635, offset = 0, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 1, start = 15645, end = 31763, offset = 36423072, sector_size=2352, type = 0, pregap = 9
+CUE: Track = 2, start = 31785, end = 54931, offset = 74356128, sector_size=2352, type = 0, pregap = 21
+CUE: Track = 3, start = 54947, end = 149, offset = 128847264, sector_size=2352, type = 0, pregap = 15
+TOC Entry 01 01 00 02 00
+TOC Entry 01 02 03 28 45
+TOC Entry 01 03 07 03 60
+TOC Entry 01 04 12 12 47
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 04 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Last Bounty Hunter, The (Europe).cue
+CDI: Open track file: cues/Last Bounty Hunter, The (Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Link - Die Fratzen des Boesen (Germany).cue
+CDI: Open track file: cues/Link - Die Fratzen des Boesen (Germany).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Link - The Faces of Evil (Europe).cue
+CDI: Open track file: cues/Link - The Faces of Evil (Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Lost Eden (Germany).cue
+CDI: Open track file: cues/Lost Eden (Germany).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Lost Ride, The (Europe).cue
+CDI: Open track file: cues/Lost Ride, The (Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/LuckyLuke.cue
+CDI: Open track file: cues/LuckyLuke.bin
+CUE: Track = 0, start = 100575, end = 113999, offset = 0, sector_size=2352, type = 0, pregap = 100425
+CUE: Track = 1, start = 114150, end = 130649, offset = 267775200, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 2, start = 130800, end = 144974, offset = 306936000, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 3, start = 145125, end = 160949, offset = 340628400, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 4, start = 161100, end = 171299, offset = 378201600, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 5, start = 171450, end = 177374, offset = 402544800, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 6, start = 177525, end = 184199, offset = 416833200, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 7, start = 184350, end = 191174, offset = 432885600, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 8, start = 191325, end = 197099, offset = 449290800, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 9, start = 197250, end = 200174, offset = 463226400, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 10, start = 200325, end = 201899, offset = 470458800, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 11, start = 202050, end = 206549, offset = 474516000, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 12, start = 206700, end = 212924, offset = 485452800, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 13, start = 213075, end = 219374, offset = 500446800, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 14, start = 219525, end = 231374, offset = 515617200, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 15, start = 231525, end = 149, offset = 543841200, sector_size=2352, type = 0, pregap = 150
+TOC Entry 01 01 22 21 00
+TOC Entry 01 02 25 22 00
+TOC Entry 01 03 29 04 00
+TOC Entry 01 04 32 15 00
+TOC Entry 01 05 35 48 00
+TOC Entry 01 06 38 06 00
+TOC Entry 01 07 39 27 00
+TOC Entry 01 08 40 58 00
+TOC Entry 01 09 42 31 00
+TOC Entry 01 10 43 50 00
+TOC Entry 01 11 44 31 00
+TOC Entry 01 12 44 54 00
+TOC Entry 01 13 45 56 00
+TOC Entry 01 14 47 21 00
+TOC Entry 01 15 48 47 00
+TOC Entry 01 16 51 27 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 16 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Mad Dog McCree (Europe) (Alt).cue
+CDI: Open track file: cues/Mad Dog McCree (Europe) (Alt).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Mad Dog McCree (France).cue
+CDI: Open track file: cues/Mad Dog McCree (France).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Mega Maze (Europe).cue
+CDI: Open track file: cues/Mega Maze (Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Mutant Rampage - Bodyslam (Europe).cue
+CDI: Open track file: cues/Mutant Rampage - Bodyslam (Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Mystic Midway - Phantom Express (USA).cue
+CDI: Open track file: cues/Mystic Midway - Phantom Express (USA).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Mystic Midway - Rest in Pieces (USA, Europe).cue
+CDI: Open track file: cues/Mystic Midway - Rest in Pieces (USA, Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Nobelia (USA).cue
+CDI: Open track file: cues/Nobelia (USA).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/P.A.W.S - Personal Automated Wagging System (Europe).cue
+CDI: Open track file: cues/P.A.W.S - Personal Automated Wagging System (Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Philips CDI Format Test Disc 1 (Europe).cue
+CDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 01).bin
+CDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 02).bin
+CDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 03).bin
+CDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 04).bin
+CDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 05).bin
+CDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 06).bin
+CDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 07).bin
+CDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 08).bin
+CDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 09).bin
+CDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 10).bin
+CDI: Open track file: cues/Philips CDI Format Test Disc 1 (Europe) (Track 11).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 1, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 2, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 3, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 4, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 5, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 6, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 7, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 8, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 9, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 10, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 41 02 00 02 00
+TOC Entry 41 03 00 02 00
+TOC Entry 41 04 00 02 00
+TOC Entry 41 05 00 02 00
+TOC Entry 41 06 00 02 00
+TOC Entry 41 07 00 02 00
+TOC Entry 41 08 00 02 00
+TOC Entry 41 09 00 02 00
+TOC Entry 41 10 00 02 00
+TOC Entry 41 11 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 11 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Photo CD Gravure - Art Arts Series - HinoSelf - Terumasa Hino (Japan).cue
+CDI: Open track file: cues/Photo CD Gravure - Art Arts Series - HinoSelf - Terumasa Hino (Japan) (Track 1).bin
+CDI: Open track file: cues/Photo CD Gravure - Art Arts Series - HinoSelf - Terumasa Hino (Japan) (Track 2).bin
+CDI: Open track file: cues/Photo CD Gravure - Art Arts Series - HinoSelf - Terumasa Hino (Japan) (Track 3).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
+CUE: Track = 2, start = 375, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 225
+TOC Entry 41 01 00 02 00
+TOC Entry 41 02 00 04 00
+TOC Entry 01 03 00 05 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 03 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Photo CD Sample Disc (USA).cue
+CDI: Open track file: cues/Photo CD Sample Disc (USA).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Plunderball (USA) (Unl).cue
+CDI: Open track file: cues/Plunderball (USA) (Unl).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Power Hitter (Europe).cue
+CDI: Open track file: cues/Power Hitter (Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/QuizMania (Italy).cue
+CDI: Open track file: cues/QuizMania (Italy).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Richard Scarry's wunderbarste Geschichten aus Schaffenau (Germany).cue
+CDI: Open track file: cues/Richard Scarry's wunderbarste Geschichten aus Schaffenau (Germany).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Robocop (USA) (Disc 1).cue
+CDI: Open track file: cues/Robocop (USA) (Disc 1).bin
+CUE: Track = 0, start = 150, end = 3599, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 1, start = 3750, end = 4201, offset = 8114400, sector_size=2352, type = 2, pregap = 150
+CUE: Track = 2, start = 4352, end = 4803, offset = 9530304, sector_size=2352, type = 2, pregap = 150
+CUE: Track = 3, start = 4954, end = 5438, offset = 10946208, sector_size=2352, type = 2, pregap = 150
+CUE: Track = 4, start = 5589, end = 6930, offset = 12439728, sector_size=2352, type = 2, pregap = 150
+CUE: Track = 5, start = 7081, end = 149, offset = 15948912, sector_size=2352, type = 2, pregap = 150
+TOC Entry 41 01 00 02 00
+TOC Entry 41 02 00 50 00
+TOC Entry 41 03 00 58 02
+TOC Entry 41 04 01 06 04
+TOC Entry 41 05 01 14 39
+TOC Entry 41 06 01 34 31
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 06 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Robocop (USA) (Disc 2).cue
+CDI: Open track file: cues/Robocop (USA) (Disc 2) (Track 1).bin
+CDI: Open track file: cues/Robocop (USA) (Disc 2) (Track 2).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
+TOC Entry 41 01 00 02 00
+TOC Entry 41 02 00 04 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 02 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Schtroumpfs, Les - Le Teleportaschtroumpf (France).cue
+CDI: Open track file: cues/Schtroumpfs, Les - Le Teleportaschtroumpf (France).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Snatcher.cue
+CDI: Open track file: cues/Snatcher.bin
+CUE: Track = 0, start = 150, end = 18439, offset = 0, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 1, start = 18440, end = 35336, offset = 43018080, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 2, start = 35337, end = 45536, offset = 82759824, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 3, start = 45537, end = 46724, offset = 106750224, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 4, start = 46725, end = 55044, offset = 109544400, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 5, start = 55045, end = 65671, offset = 129113040, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 6, start = 65672, end = 72604, offset = 154107744, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 7, start = 72605, end = 79114, offset = 170414160, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 8, start = 79115, end = 83351, offset = 185725680, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 9, start = 83352, end = 95989, offset = 195691104, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 10, start = 95990, end = 104801, offset = 225415680, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 11, start = 104802, end = 112656, offset = 246141504, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 12, start = 112657, end = 118266, offset = 264616464, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 13, start = 118267, end = 136171, offset = 277811184, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 14, start = 136172, end = 146579, offset = 319923744, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 15, start = 146580, end = 162714, offset = 344403360, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 16, start = 162715, end = 176286, offset = 382352880, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 17, start = 176287, end = 185169, offset = 414274224, sector_size=2352, type = 0, pregap = 0
+CUE: Track = 18, start = 185170, end = 149, offset = 435167040, sector_size=2352, type = 0, pregap = 0
+TOC Entry 01 01 00 02 00
+TOC Entry 01 02 04 05 65
+TOC Entry 01 03 07 51 12
+TOC Entry 01 04 10 07 12
+TOC Entry 01 05 10 23 00
+TOC Entry 01 06 12 13 70
+TOC Entry 01 07 14 35 47
+TOC Entry 01 08 16 08 05
+TOC Entry 01 09 17 34 65
+TOC Entry 01 10 18 31 27
+TOC Entry 01 11 21 19 65
+TOC Entry 01 12 23 17 27
+TOC Entry 01 13 25 02 07
+TOC Entry 01 14 26 16 67
+TOC Entry 01 15 30 15 47
+TOC Entry 01 16 32 34 30
+TOC Entry 01 17 36 09 40
+TOC Entry 01 18 39 10 37
+TOC Entry 01 19 41 08 70
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 19 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Space Ace (Europe).cue
+CDI: Open track file: cues/Space Ace (Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Star Trek VI - Terre Inconnue (France) (Disc 1).cue
+CDI: Open track file: cues/Star Trek VI - Terre Inconnue (France) (Disc 1).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Star-Wars-Episode-IV-A-New-Hope-Disc-1.cue
+CDI: Open track file: cues/Star-Wars-Episode-IV-A-New-Hope-Disc-1 (Track 1).bin
+CDI: Open track file: cues/Star-Wars-Episode-IV-A-New-Hope-Disc-1 (Track 2).bin
+CDI: Open track file: cues/Star-Wars-Episode-IV-A-New-Hope-Disc-1 (Track 3).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
+CUE: Track = 2, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
+TOC Entry 41 01 00 02 00
+TOC Entry 41 02 00 04 00
+TOC Entry 41 03 00 04 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 03 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Terminator 2 - Judgment Day (USA) (Disc 1).cue
+CDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 1) (Track 1).bin
+CDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 1) (Track 2).bin
+CDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 1) (Track 3).bin
+CDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 1) (Track 4).bin
+CDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 1) (Track 5).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
+CUE: Track = 2, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
+CUE: Track = 3, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
+CUE: Track = 4, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
+TOC Entry 41 01 00 02 00
+TOC Entry 41 02 00 04 00
+TOC Entry 41 03 00 04 00
+TOC Entry 41 04 00 04 00
+TOC Entry 41 05 00 04 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 05 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Terminator 2 - Judgment Day (USA) (Disc 2).cue
+CDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 2) (Track 1).bin
+CDI: Open track file: cues/Terminator 2 - Judgment Day (USA) (Disc 2) (Track 2).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 150
+TOC Entry 41 01 00 02 00
+TOC Entry 41 02 00 04 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 02 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Tetris (USA, Europe).cue
+CDI: Open track file: cues/Tetris (USA, Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Thunder in Paradise (USA) (Disc 1) (The Game).cue
+CDI: Open track file: cues/Thunder in Paradise (USA) (Disc 1) (The Game).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Ultimate Noah's Ark, The (UK).cue
+CDI: Open track file: cues/Ultimate Noah's Ark, The (UK).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Ultimate Noah's Ark, The (USA).cue
+CDI: Open track file: cues/Ultimate Noah's Ark, The (USA).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Validation Disc (Europe) (Disc 1).cue
+CDI: Open track file: cues/Validation Disc (Europe) (Disc 1).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Validation Disc (Japan) (Disc 2).cue
+CDI: Open track file: cues/Validation Disc (Japan) (Disc 2) (Track 1).bin
+CDI: Open track file: cues/Validation Disc (Japan) (Disc 2) (Track 2).bin
+CDI: Open track file: cues/Validation Disc (Japan) (Disc 2) (Track 3).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 1, start = 300, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 150
+CUE: Track = 2, start = 313, end = 149, offset = 0, sector_size=2352, type = 0, pregap = 163
+TOC Entry 41 01 00 02 00
+TOC Entry 01 02 00 04 00
+TOC Entry 01 03 00 04 13
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 03 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Who Shot Johnny Rock (Europe).cue
+CDI: Open track file: cues/Who Shot Johnny Rock (Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Zelda - Der Zauberstab von Gamelon (Germany).cue
+CDI: Open track file: cues/Zelda - Der Zauberstab von Gamelon (Germany).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Zenith (Europe).cue
+CDI: Open track file: cues/Zenith (Europe).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/Zombie Dinos vom Planeten Zeltoid (Germany).cue
+CDI: Open track file: cues/Zombie Dinos vom Planeten Zeltoid (Germany).bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 2, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/darkchaser.cue
+CDI: Open track file: cues/darkchaser.img
+CUE: Track = 0, start = 150, end = 451, offset = 0, sector_size=2352, type = 2, pregap = 0
+CUE: Track = 1, start = 602, end = 73264, offset = 710304, sector_size=2352, type = 2, pregap = 150
+CUE: Track = 2, start = 73490, end = 149, offset = 171966480, sector_size=2352, type = 0, pregap = 225
+TOC Entry 41 01 00 02 00
+TOC Entry 41 02 00 08 02
+TOC Entry 01 03 16 19 65
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 03 00 00
+TOC Entry 01 a2 00 02 00
+CDI: Open CUE: cues/fmvdemo.cue
+CDI: Open track file: cues/fmvdemo.bin
+CUE: Track = 0, start = 150, end = 149, offset = 0, sector_size=2352, type = 1, pregap = 0
+TOC Entry 41 01 00 02 00
+TOC Entry 01 a0 01 00 00
+TOC Entry 01 a1 01 00 00
+TOC Entry 01 a2 00 02 00
