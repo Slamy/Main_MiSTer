@@ -148,23 +148,11 @@ int cdi_load_chd(const char* filename, toc_t* table)
 		return 0;
 	}
 
-	/* PSX core expects the TOC values for track start/end to not take into account
-	* pregap, unlike some other cores. Adjust the CHD toc to reflect this
-	*/
-
 	for (int i = 0; i < table->last; i++)
 	{
-		if (i == 0) //First track fakes a pregap even if it doesn't exist
-		{
-			table->tracks[i].indexes[1] = 150;
-			table->tracks[i].start = 150;
-			table->tracks[i].end += 150-1;
-		} else {
-			int frame_cnt = table->tracks[i].end - table->tracks[i].start;
-			frame_cnt += table->tracks[i].indexes[1];
-			table->tracks[i].start = table->tracks[i-1].end + 1;
-			table->tracks[i].end = table->tracks[i].start + frame_cnt - 1;
-		}
+		table->tracks[i].pregap = table->tracks[i].indexes[1];
+		table->tracks[i].start += 150;
+		table->tracks[i].end += 150 - 1;
 
 		printf("CHD: Track = %u, start = %u, end = %u, offset = %d, sector_size=%d, type = %u, pregap = "
 			   "%u\n",
@@ -175,10 +163,10 @@ int cdi_load_chd(const char* filename, toc_t* table)
 			   table->tracks[i].sector_size,
 			   table->tracks[i].type,
 			   table->tracks[i].pregap);
-		printf("CHD: Track = %u, indexes %u %u\n", i, table->tracks[i].indexes[0], table->tracks[i].indexes[1]);
+		//printf("CHD: Track = %u, indexes %u %u\n", i, table->tracks[i].indexes[0], table->tracks[i].indexes[1]);
 	}
 
-	table->end = table->tracks[table->last - 1].end + 1;
+	table->end += 150;
 
 	chd_hunkbuf = (uint8_t*)malloc(table->chd_hunksize);
 	if (!chd_hunkbuf)

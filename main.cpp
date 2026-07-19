@@ -70,7 +70,7 @@ int main(int argc, char *argv[]) {
 	}
 #endif
 
-#if 0
+#if 1
   assert(cdi_load_chd("/home/andre/Downloads/inxs/INXS - Listen Like Thieves "
                       "(USA)/INXS - Listen Like Thieves (USA).chd",
                       cdi_toc()));
@@ -84,7 +84,7 @@ int main(int argc, char *argv[]) {
   FILE *f = fopen("cuesingle.bin", "wb");
 #endif
 
-#if 1
+#if 0
   assert(cdi_load_cue("/home/andre/Downloads/inxs/INXS - Listen Like Thieves "
                       "(USA)/INXS - Listen Like Thieves (USA).cue",
                       cdi_toc()) == 1);
@@ -93,12 +93,14 @@ int main(int argc, char *argv[]) {
 
   uint8_t buffer[CDI_CDIC_BUFFER_SIZE * 6];
 
+  return 0;
+
 #if 0
   int lba_start = 16372;
   int lba_end = 16372+5; //167845;
 #else
   int lba_start = 0;
-  int lba_end = 167845;
+  int lba_end = 167845 / 2;
 #endif
 
   int sectors_per_read = 1;
