@@ -91,16 +91,20 @@ int main(int argc, char *argv[]) {
   FILE *f = fopen("cuemulti.bin", "wb");
 #endif
 
-
   uint8_t buffer[CDI_CDIC_BUFFER_SIZE * 6];
 
   int lbacnt = 167845;
-  int sectors_per_read = 6;
+  int sectors_per_read = 1;
+  int expected_bytes_per_request = CDI_CDIC_BUFFER_SIZE * sectors_per_read;
+  int file_offset = 0;
 
   for (int lba = 0; lba < lbacnt; lba += sectors_per_read) {
+    printf("Writing at %x\n", file_offset);
     cdi_read_cd(buffer, lba, sectors_per_read);
-    int bytes = fwrite(buffer, 1, sizeof(buffer), f);
-    assert(bytes == sizeof(buffer));
+    int bytes = fwrite(buffer, 1, expected_bytes_per_request, f);
+    assert(bytes == expected_bytes_per_request);
+
+    file_offset += bytes;
   }
   fclose(f);
 }
