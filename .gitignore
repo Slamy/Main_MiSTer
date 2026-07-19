@@ -29,3 +29,9 @@ host
 .vs
 MiSTer
 /bin
+/chdout.bin
+/cuemulti.bin
+/cuesingle.bin
+/log
+/right
+/wrong

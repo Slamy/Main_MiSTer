@@ -46,11 +46,11 @@ table->end will have wrong values compared to running on the MiSTer
 
 const char *version = "$VER:" VDATE;
 
-toc_t table;
 int cdi_load_cue(const char *filename, toc_t *table);
 void prepare_toc_buffer(toc_t *toc);
 int cdi_load_chd(const char *filename, toc_t *table);
 void cdi_read_cd(uint8_t *buffer, int lba, int cnt);
+toc_t *cdi_toc();
 
 #define CDI_SECTOR_LEN 2352
 #define CDI_SUBCHANNEL_LEN ((12 + 96) * 2)
@@ -70,15 +70,35 @@ int main(int argc, char *argv[]) {
 	}
 #endif
 
+#if 0
   assert(cdi_load_chd("/home/andre/Downloads/inxs/INXS - Listen Like Thieves "
                       "(USA)/INXS - Listen Like Thieves (USA).chd",
-                      &table));
+                      cdi_toc()));
+  FILE *f = fopen("chdout.bin", "wb");
+#endif
+
+#if 0
+  assert(cdi_load_cue("/home/andre/Downloads/inxs/INXS - Listen Like Thieves "
+                      "(USA)/barf.cue",
+                      cdi_toc()) == 1);
+  FILE *f = fopen("cuesingle.bin", "wb");
+#endif
+
+#if 1
+  assert(cdi_load_cue("/home/andre/Downloads/inxs/INXS - Listen Like Thieves "
+                      "(USA)/INXS - Listen Like Thieves (USA).cue",
+                      cdi_toc()) == 1);
+  FILE *f = fopen("cuemulti.bin", "wb");
+#endif
+
 
   uint8_t buffer[CDI_CDIC_BUFFER_SIZE * 6];
 
-  FILE *f = fopen("chdout.bin", "wb");
-  for (int lba = 0; lba < 1000; lba += 6) {
-    cdi_read_cd(buffer, 0, 6);
+  int lbacnt = 167845;
+  int sectors_per_read = 6;
+
+  for (int lba = 0; lba < lbacnt; lba += sectors_per_read) {
+    cdi_read_cd(buffer, lba, sectors_per_read);
     int bytes = fwrite(buffer, 1, sizeof(buffer), f);
     assert(bytes == sizeof(buffer));
   }

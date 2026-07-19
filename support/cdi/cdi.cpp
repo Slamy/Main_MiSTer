@@ -178,40 +178,6 @@ int cdi_load_chd(const char* filename, toc_t* table)
 	return 1;
 }
 
-struct
-{
-	int size;
-	const char* filename;
-} bin_sizes[] = {
-	{38161200, "INXS - Listen Like Thieves (USA) (Track 01).bin"},
-	{39885216, "INXS - Listen Like Thieves (USA) (Track 02).bin"},
-	{41606880, "INXS - Listen Like Thieves (USA) (Track 03).bin"},
-	{33015024, "INXS - Listen Like Thieves (USA) (Track 04).bin"},
-	{29106000, "INXS - Listen Like Thieves (USA) (Track 05).bin"},
-	{30089136, "INXS - Listen Like Thieves (USA) (Track 06).bin"},
-	{33591264, "INXS - Listen Like Thieves (USA) (Track 07).bin"},
-	{26043696, "INXS - Listen Like Thieves (USA) (Track 08).bin"},
-	{52630704, "INXS - Listen Like Thieves (USA) (Track 09).bin"},
-	{32876256, "INXS - Listen Like Thieves (USA) (Track 10).bin"},
-	{37413264, "INXS - Listen Like Thieves (USA) (Track 11).bin"},
-	{37413264, "INXS - Listen Like Thieves (USA) (Track 11).bin"},
-	{165086880, "LachIschOdaWas.bin"},
-};
-
-int LookupSize(const char* name)
-{
-	int size = 0;
-	for (int i = 0; i < ARRAY_LENGTH(bin_sizes); i++)
-	{
-		if (strstr(name, bin_sizes[i].filename))
-		{
-			size = bin_sizes[i].size;
-		}
-	}
-	//printf("Size %s %d\n", name, size);
-	return size;
-};
-
 int cdi_load_cue(const char* filename, toc_t* table)
 {
 	static char fname[1024 + 10];
@@ -230,7 +196,6 @@ int cdi_load_cue(const char* filename, toc_t* table)
 		return 0;
 	}
 
-#if 0
 	// Try to open a CloneCD type subcode file
 	memcpy(&fname[strlen(fname) - 4], ".sub", 4);
 	if (FileOpen(&toc.sub, getFullPath(fname)), 1)
@@ -241,13 +206,12 @@ int cdi_load_cue(const char* filename, toc_t* table)
 	else
 	{
 		memcpy(&fname[strlen(fname) - 4], ".cdg", 4);
-		if (FileOpen(&toc.sub, getFullPath(fname)),1)
+		if (FileOpen(&toc.sub, getFullPath(fname)), 1)
 		{
 			printf("CDI: Using .cdg file for subchannel RW: %s\n", fname);
 			sub_loaded_from_cdg = true;
 		}
 	}
-#endif
 
 	int mm, ss, bb;
 	int index0 = 0;
@@ -287,8 +251,8 @@ int cdi_load_cue(const char* filename, toc_t* table)
 			}
 			*ptr = 0;
 
-			table->tracks[table->last].f.filp = (FILE*)"x";
-			table->tracks[table->last].f.size = LookupSize(fname);
+			if (!FileOpen(&table->tracks[table->last].f, fname))
+				return 0;
 
 			//printf("open state %d\n", table->tracks[table->last].f.opened());
 
@@ -399,10 +363,14 @@ int cdi_load_cue(const char* filename, toc_t* table)
 			   table->tracks[i].sector_size,
 			   table->tracks[i].type,
 			   table->tracks[i].pregap);
-		table->tracks[i].f.filp = NULL;
 	}
 
 	return 1;
+}
+
+toc_t* cdi_toc()
+{
+	return &toc;
 }
 
 static int load_cd_image(const char* filename, toc_t* table)
@@ -961,7 +929,7 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 
 	while (cnt > 0)
 	{
-		memset(buffer, 0, CDI_SECTOR_LEN);
+		memset(buffer, 0, CDI_CDIC_BUFFER_SIZE);
 
 		if (lba < 0 || !toc.last)
 		{
@@ -1043,7 +1011,7 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 								   read_lba);
 
 							if (mister_chd_read_sector(toc.chd_f,
-													   (read_lba + toc.tracks[i].offset),
+													   read_lba,
 													   0,
 													   0,
 													   CDI_SECTOR_LEN,
@@ -1066,11 +1034,12 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 								printf("CDI: CHD read error: %d\n", lba);
 							}
 
+#if 0
 							//Just use the read sector call with an offset, since we previously read that sector, it is already in the hunk cache
 							if (toc.tracks[i].sbc_type == SUBCODE_RW_RAW || toc.tracks[i].sbc_type == SUBCODE_RW)
 							{
 								if (mister_chd_read_sector(toc.chd_f,
-														   (read_lba + toc.tracks[i].offset),
+														   (read_lba),
 														   0,
 														   CDI_SECTOR_LEN,
 														   subc.size(),
@@ -1085,6 +1054,7 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 									printf("CDI: CHD read error: %d\n", lba);
 								}
 							}
+#endif
 
 							if (toc.tracks[i].sbc_type == SUBCODE_RW)
 							{
