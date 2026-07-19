@@ -956,10 +956,11 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 					{
 						if (toc.tracks[i].offset)
 						{
+							/*
 							printf("Seek to %d\n",
 								   toc.tracks[i].offset +
 									   ((lba - toc.tracks[i].start + toc.tracks[i].pregap) * CDI_SECTOR_LEN));
-
+							*/
 							FileSeek(&toc.tracks[0].f,
 									 toc.tracks[i].offset +
 										 ((lba - toc.tracks[i].start + toc.tracks[i].pregap) * CDI_SECTOR_LEN),
@@ -967,9 +968,10 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 						}
 						else
 						{
+							/*
 							printf("Seek to %d\n",
 								   ((lba - toc.tracks[i].start + toc.tracks[i].pregap) * CDI_SECTOR_LEN));
-
+							*/
 							FileSeek(&toc.tracks[i].f,
 									 (lba - toc.tracks[i].start + toc.tracks[i].pregap) * CDI_SECTOR_LEN,
 									 SEEK_SET);
@@ -1007,20 +1009,21 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 							// The "fake" 150 sector pregap moves all the LBAs up by 150, so adjust here to read where the core actually wants data from
 							int read_lba = lba - 150;
 
-							if (i > 0)
-							{
-								//read_lba += toc.tracks[i].offset - toc.tracks[i - 1].offset;
-							}
-
+#if 0
 							printf("CHD %d  %d %d %d\n",
 								   i,
 								   (read_lba + toc.tracks[i].offset),
 								   (read_lba + toc.tracks[i].offset - toc.tracks[i - 1].offset),
 								   read_lba);
-
-							if (mister_chd_read_sector(
-									toc.chd_f, read_lba, 0, 0, CDI_SECTOR_LEN, buffer, chd_hunkbuf, &chd_hunknum) ==
-								CHDERR_NONE)
+#endif
+							if (mister_chd_read_sector(toc.chd_f,
+													   (read_lba + toc.tracks[i].offset),
+													   0,
+													   0,
+													   CDI_SECTOR_LEN,
+													   buffer,
+													   chd_hunkbuf,
+													   &chd_hunknum) == CHDERR_NONE)
 							{
 								if (!toc.tracks[i].type) // CHD requires byteswap of audio data
 								{
@@ -1037,12 +1040,12 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 								printf("CDI: CHD read error: %d\n", lba);
 							}
 
-#if 0
+#if 1
 							//Just use the read sector call with an offset, since we previously read that sector, it is already in the hunk cache
 							if (toc.tracks[i].sbc_type == SUBCODE_RW_RAW || toc.tracks[i].sbc_type == SUBCODE_RW)
 							{
 								if (mister_chd_read_sector(toc.chd_f,
-														   (read_lba),
+														   (read_lba + toc.tracks[i].offset),
 														   0,
 														   CDI_SECTOR_LEN,
 														   subc.size(),
@@ -1067,7 +1070,7 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 						}
 						else
 						{
-							printf("Read from %d\n", i);
+							//printf("Read from %d\n", i);
 							if (toc.tracks[i].offset)
 								FileReadAdv(&toc.tracks[0].f, buffer, CDI_SECTOR_LEN);
 							else

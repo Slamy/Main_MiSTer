@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "cd.h"
+#include "crc32.h"
 #include "fpga_io.h"
 #include "frame_timer.h"
 #include "input.h"
@@ -56,7 +57,11 @@ toc_t *cdi_toc();
 #define CDI_SUBCHANNEL_LEN ((12 + 96) * 2)
 #define CDI_CDIC_BUFFER_SIZE (CDI_SECTOR_LEN + CDI_SUBCHANNEL_LEN)
 
+uint32_t table[256];
+
 int main(int argc, char *argv[]) {
+  crc32::generate_table(table);
+
 #if 0
 	glob_t glob_result;
     memset(&glob_result, 0, sizeof(glob_result));
@@ -93,14 +98,14 @@ int main(int argc, char *argv[]) {
 
   uint8_t buffer[CDI_CDIC_BUFFER_SIZE * 6];
 
-  return 0;
+  // return 0;
 
 #if 0
   int lba_start = 16372;
   int lba_end = 16372+5; //167845;
 #else
   int lba_start = 0;
-  int lba_end = 167845 / 2;
+  int lba_end = 167845;
 #endif
 
   int sectors_per_read = 1;
@@ -108,9 +113,11 @@ int main(int argc, char *argv[]) {
   int file_offset = 0;
 
   for (int lba = lba_start; lba < lba_end; lba += sectors_per_read) {
-    printf("Writing block %d at %x\n", lba, file_offset);
     cdi_read_cd(buffer, lba, sectors_per_read);
-#if 1
+    uint32_t crc = crc32::update(table, 0, buffer, expected_bytes_per_request);
+    printf("Block %d at %x with CRC %x\n", lba, file_offset, crc);
+
+#if 0
     int bytes = fwrite(buffer, 1, expected_bytes_per_request, f);
     assert(bytes == expected_bytes_per_request);
 #endif
