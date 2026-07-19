@@ -68,7 +68,9 @@ struct toc_entry
 	uint8_t f;
 };
 
-static std::array<struct toc_entry, 200> toc_buffer;
+// (99 + 3) * 3 to support 99 tracks + A0/A1/A2
+static std::array<struct toc_entry, (99 + 3) * 3> toc_buffer;
+
 uint32_t toc_entry_count = 0;
 static enum DiscType disc_type = DT_CDDA;
 
@@ -119,6 +121,7 @@ static void unload_chd(toc_t* table)
 	}
 	if (chd_hunkbuf)
 		free(chd_hunkbuf);
+	chd_hunkbuf = nullptr;
 	memset(table, 0, sizeof(toc_t));
 	chd_hunknum = -1;
 }
@@ -147,7 +150,6 @@ static int load_chd(const char* filename, toc_t* table)
 
 	for (int i = 0; i < table->last; i++)
 	{
-		table->tracks[i].pregap = table->tracks[i].indexes[1];
 		table->tracks[i].start += 150;
 		table->tracks[i].end += 150;
 
@@ -166,6 +168,11 @@ static int load_chd(const char* filename, toc_t* table)
 	table->end += 150;
 
 	chd_hunkbuf = (uint8_t*)malloc(table->chd_hunksize);
+	if (!chd_hunkbuf)
+	{
+		unload_chd(table);
+		return 0;
+	}
 	chd_hunknum = -1;
 
 	return 1;
@@ -269,12 +276,13 @@ int cdi_load_cue(const char* filename, toc_t* table)
 			if (*lptr == '\"')
 			{
 				lptr++;
-				while ((*lptr != '\"') && (lptr <= (line + 128)) && (ptr < (fname + 1023)))
+				while ((*lptr != '\"') && (lptr < (line + sizeof(line))) && (ptr < (fname + sizeof(fname) - 1)))
 					*ptr++ = *lptr++;
 			}
 			else
 			{
-				while ((*lptr != 0x20) && (lptr <= (line + 128)) && (ptr < (fname + 1023)))
+				while (*lptr && (*lptr != 0x20) && (lptr < (line + sizeof(line))) &&
+					   (ptr < (fname + sizeof(fname) - 1)))
 					*ptr++ = *lptr++;
 			}
 			*ptr = 0;
@@ -479,6 +487,9 @@ void prepare_toc_buffer(toc_t* toc)
 		printf("TOC Entry %02x %02x %02x %02x %02x\n", control, track, m, s, f);
 		for (int i = 0; i < 3; i++)
 		{
+			if (toc_entry_count >= toc_buffer.size())
+				return;
+
 			toc_ptr->control = control;
 			toc_ptr->track = track;
 			toc_ptr->m = m;
@@ -487,8 +498,7 @@ void prepare_toc_buffer(toc_t* toc)
 
 			toc_ptr++;
 
-			if (toc_entry_count < toc_buffer.size())
-				toc_entry_count++;
+			toc_entry_count++;
 		}
 	};
 
@@ -863,10 +873,12 @@ void subcode_q_data(int lba, struct subcode& out)
 		as = rem_lba / 75;
 		af = rem_lba % 75;
 
-		int track = toc.GetTrackByLBA(lba + 150);
+		int track = 0;
+		while (track < toc.last && lba > toc.tracks[track].end)
+			track++;
 
 		int track_lba = 0;
-		if (track < (int)ARRAY_LENGTH(toc.tracks))
+		if (track >= 0 && track < toc.last)
 			track_lba = lba - toc.tracks[track].start;
 
 		int index = 1;
@@ -885,7 +897,7 @@ void subcode_q_data(int lba, struct subcode& out)
 		ts = track_lba / 75;
 		tf = track_lba % 75;
 
-		if (track < (int)ARRAY_LENGTH(toc.tracks))
+		if (track >= 0 && track < toc.last)
 			out.control = htons(toc.tracks[track].type ? 0x41 : 0x01);
 		out.track = htons(BCD(track + 1));
 		out.index = htons(BCD(index));
@@ -908,10 +920,19 @@ void subcode_q_data(int lba, struct subcode& out)
 	out.mode1_crc0 = htons((crc_accum >> 8) & 0xff);
 	out.mode1_crc1 = htons(crc_accum & 0xff);
 #if 0
-	printf("subcode %d   %02x %02x %02x %02x %02x %02x     %02x %02x %02x %02x %02x %02x\n", lba,
-		   ntohs(out.control), ntohs(out.track), ntohs(out.index),
-		   ntohs(out.mode1_mins), ntohs(out.mode1_secs), ntohs(out.mode1_frac), ntohs(out.mode1_zero),
-		   ntohs(out.mode1_amins), ntohs(out.mode1_asecs), ntohs(out.mode1_afrac), ntohs(out.mode1_crc0),
+	printf("subcode %d   %02x %02x %02x %02x %02x %02x     %02x %02x %02x %02x %02x %02x\n",
+		   lba,
+		   ntohs(out.control),
+		   ntohs(out.track),
+		   ntohs(out.index),
+		   ntohs(out.mode1_mins),
+		   ntohs(out.mode1_secs),
+		   ntohs(out.mode1_frac),
+		   ntohs(out.mode1_zero),
+		   ntohs(out.mode1_amins),
+		   ntohs(out.mode1_asecs),
+		   ntohs(out.mode1_afrac),
+		   ntohs(out.mode1_crc0),
 		   ntohs(out.mode1_crc1));
 #endif
 }
@@ -940,10 +961,11 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 
 	while (cnt > 0)
 	{
+		memset(buffer, 0, CDI_SECTOR_LEN);
+
 		if (lba < 0 || !toc.last)
 		{
 			// TOC area
-			memset(buffer, 0, CDI_SECTOR_LEN);
 			buffer += CDI_SECTOR_LEN;
 			struct subcode& subcode_out = *reinterpret_cast<struct subcode*>(buffer);
 			subcode_q_data(lba, subcode_out);
@@ -955,10 +977,10 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 		}
 		else
 		{
-			memset(buffer, 0xAA, CDI_SECTOR_LEN);
-
+			// Iterate over all CD tracks and ...
 			for (int i = 0; i < toc.last; i++)
 			{
+				// ... check for sectors in reading range
 				if (lba >= (toc.tracks[i].start - toc.tracks[i].pregap) && lba <= toc.tracks[i].end)
 				{
 					if (!toc.chd_f)
@@ -998,9 +1020,9 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 						}
 					}
 
-					while (cnt)
+					while (cnt && lba <= toc.tracks[i].end)
 					{
-						std::array<uint8_t, SUBCHANNEL_RW_SIZE> subc;
+						std::array<uint8_t, SUBCHANNEL_RW_SIZE> subc{};
 						bool subc_filled{false};
 						bool reinterleave_subcode{false};
 
@@ -1008,6 +1030,18 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 						{
 							// The "fake" 150 sector pregap moves all the LBAs up by 150, so adjust here to read where the core actually wants data from
 							int read_lba = lba - 150;
+
+							if (i > 0)
+							{
+								read_lba += toc.tracks[i].offset - toc.tracks[i - 1].offset - 1;
+							}
+
+							printf("CHD %d  %d %d %d\n",
+								   i,
+								   (read_lba + toc.tracks[i].offset),
+								   (read_lba + toc.tracks[i].offset - toc.tracks[i - 1].offset),
+								   read_lba);
+
 							if (mister_chd_read_sector(toc.chd_f,
 													   (read_lba + toc.tracks[i].offset),
 													   0,
@@ -1080,9 +1114,6 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 							}
 						}
 
-						if ((lba + 1) > toc.tracks[i].end)
-							break;
-
 						check_scramble(lba, buffer);
 						buffer += CDI_SECTOR_LEN;
 						struct subcode& subcode_out = *reinterpret_cast<struct subcode*>(buffer);
@@ -1106,8 +1137,16 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 						cnt--;
 						lba++;
 					}
-					break;
 				}
+			}
+
+			if (cnt)
+			{
+				// Even without track data, build a lead out to end the CD properly
+				buffer += CDI_SECTOR_LEN;
+				struct subcode& subcode_out = *reinterpret_cast<struct subcode*>(buffer);
+				subcode_q_data(lba, subcode_out);
+				buffer += sizeof(subcode_out);
 			}
 		}
 
@@ -1148,7 +1187,7 @@ void cdi_mount_cd(int s_index, const char* filename)
 			// to avoid resets on the core
 			if (!same_game)
 			{
-				strncpy(last_dir, filename, sizeof(last_dir));
+				snprintf(last_dir, sizeof(last_dir), "%s", filename);
 				char* p = strrchr(last_dir, '/');
 				if (p)
 					*p = 0;
