@@ -93,18 +93,26 @@ int main(int argc, char *argv[]) {
 
   uint8_t buffer[CDI_CDIC_BUFFER_SIZE * 6];
 
-  int lbacnt = 167845;
+#if 0
+  int lba_start = 16372;
+  int lba_end = 16372+5; //167845;
+#else
+  int lba_start = 0;
+  int lba_end = 167845;
+#endif
+
   int sectors_per_read = 1;
   int expected_bytes_per_request = CDI_CDIC_BUFFER_SIZE * sectors_per_read;
   int file_offset = 0;
 
-  for (int lba = 0; lba < lbacnt; lba += sectors_per_read) {
-    printf("Writing at %x\n", file_offset);
+  for (int lba = lba_start; lba < lba_end; lba += sectors_per_read) {
+    printf("Writing block %d at %x\n", lba, file_offset);
     cdi_read_cd(buffer, lba, sectors_per_read);
+#if 1
     int bytes = fwrite(buffer, 1, expected_bytes_per_request, f);
     assert(bytes == expected_bytes_per_request);
-
-    file_offset += bytes;
+#endif
+    file_offset += expected_bytes_per_request;
   }
   fclose(f);
 }

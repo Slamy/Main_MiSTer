@@ -151,7 +151,7 @@ int cdi_load_chd(const char* filename, toc_t* table)
 	for (int i = 0; i < table->last; i++)
 	{
 		table->tracks[i].start += 150;
-		table->tracks[i].end += 150;
+		table->tracks[i].end += 150 - 1;
 
 		printf("CHD: Track = %u, start = %u, end = %u, offset = %d, sector_size=%d, type = %u, pregap = "
 			   "%u\n",
@@ -955,6 +955,10 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 					{
 						if (toc.tracks[i].offset)
 						{
+							printf("Seek to %d\n",
+								   toc.tracks[i].offset +
+									   ((lba - toc.tracks[i].start + toc.tracks[i].pregap) * CDI_SECTOR_LEN));
+
 							FileSeek(&toc.tracks[0].f,
 									 toc.tracks[i].offset +
 										 ((lba - toc.tracks[i].start + toc.tracks[i].pregap) * CDI_SECTOR_LEN),
@@ -962,6 +966,9 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 						}
 						else
 						{
+							printf("Seek to %d\n",
+								   ((lba - toc.tracks[i].start + toc.tracks[i].pregap) * CDI_SECTOR_LEN));
+
 							FileSeek(&toc.tracks[i].f,
 									 (lba - toc.tracks[i].start + toc.tracks[i].pregap) * CDI_SECTOR_LEN,
 									 SEEK_SET);
@@ -1001,7 +1008,7 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 
 							if (i > 0)
 							{
-								read_lba += toc.tracks[i].offset - toc.tracks[i - 1].offset - 1;
+								read_lba += toc.tracks[i].offset - toc.tracks[i - 1].offset;
 							}
 
 							printf("CHD %d  %d %d %d\n",
@@ -1010,14 +1017,9 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 								   (read_lba + toc.tracks[i].offset - toc.tracks[i - 1].offset),
 								   read_lba);
 
-							if (mister_chd_read_sector(toc.chd_f,
-													   read_lba,
-													   0,
-													   0,
-													   CDI_SECTOR_LEN,
-													   buffer,
-													   chd_hunkbuf,
-													   &chd_hunknum) == CHDERR_NONE)
+							if (mister_chd_read_sector(
+									toc.chd_f, read_lba, 0, 0, CDI_SECTOR_LEN, buffer, chd_hunkbuf, &chd_hunknum) ==
+								CHDERR_NONE)
 							{
 								if (!toc.tracks[i].type) // CHD requires byteswap of audio data
 								{
@@ -1064,6 +1066,7 @@ void cdi_read_cd(uint8_t* buffer, int lba, int cnt)
 						}
 						else
 						{
+							printf("Read from %d\n", i);
 							if (toc.tracks[i].offset)
 								FileReadAdv(&toc.tracks[0].f, buffer, CDI_SECTOR_LEN);
 							else
