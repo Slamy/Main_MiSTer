@@ -31,7 +31,7 @@ C_SRC =   $(wildcard *.c) \
           $(wildcard ./lib/libchdr/*.c) \
           lib/libco/arm.c
 
-CPP_SRC = main.cpp file_io.cpp \
+CPP_SRC = main.cpp file_io.cpp support/chd/mister_chd.cpp \
           $(wildcard ./lib/serial_server/library/*.cpp) \
           $(wildcard ./support/cdi/*.cpp)
 
@@ -42,7 +42,7 @@ IMLIB2_LIB  = -lfreetype -lbz2 -lpng16 -lz -lImlib2
 OBJ	= $(C_SRC:%.c=$(BUILDDIR)/%.c.o) $(CPP_SRC:%.cpp=$(BUILDDIR)/%.cpp.o) $(IMG:%.png=$(BUILDDIR)/%.png.o)
 DEP	= $(C_SRC:%.c=$(BUILDDIR)/%.c.d) $(CPP_SRC:%.cpp=$(BUILDDIR)/%.cpp.d)
 
-DFLAGS	= $(INCLUDE) -D_7ZIP_ST -DPACKAGE_VERSION=\"1.3.3\" -DHAVE_LROUND -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_SYS_PARAM_H -DENABLE_64_BIT_WORDS=0 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DVDATE=\"`date +"%y%m%d"`\"
+DFLAGS	= $(INCLUDE) -D_7ZIP_ST -DZSTD_DISABLE_ASM -DPACKAGE_VERSION=\"1.3.3\" -DHAVE_LROUND -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_SYS_PARAM_H -DENABLE_64_BIT_WORDS=0 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DVDATE=\"`date +"%y%m%d"`\"
 CFLAGS	= $(DFLAGS) -Wall -Wextra -Wno-strict-aliasing -Wno-stringop-overflow -Wno-stringop-truncation -Wno-format-truncation -Wno-psabi -Wno-restrict -c  -ffunction-sections -fdata-sections 
 LFLAGS	= -lc -lstdc++ -lm -lrt $(IMLIB2_LIB) -lbluetooth -lpthread -Wl,--gc-sections
 

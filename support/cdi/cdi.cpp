@@ -139,7 +139,7 @@ static void unload_cue(toc_t* table)
 	memset(table, 0, sizeof(toc_t));
 }
 
-static int load_chd(const char* filename, toc_t* table)
+int cdi_load_chd(const char* filename, toc_t* table)
 {
 	unload_chd(table);
 	chd_error err = mister_load_chd(filename, table);
@@ -415,7 +415,7 @@ static int load_cd_image(const char* filename, toc_t* table)
 
 	if (!strncasecmp(".chd", ext, 4))
 	{
-		result = load_chd(filename, table);
+		result = cdi_load_chd(filename, table);
 	}
 	else if (!strncasecmp(".cue", ext, 4))
 	{
